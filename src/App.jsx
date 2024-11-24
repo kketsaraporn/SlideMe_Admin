@@ -11,7 +11,7 @@ import AccountStatus from "./components/Account Status/AccountStatus";
 import AdminAccout from "./components/Admin Account Management/AdminAccout";
 import Login from "./components/Login/Login";
 import Forgot from "./components/Login/Forgotpassword/Forgot";
-import CheckDriver from "./components/Check Driver Reviews/CheckDriver";
+import CheckDriver from "./components/Review2/CheckDriver";
 import Checkorder from "./components/Checkorder/Checkorder";
 import Layout from "./Layout/layout/Layout";
 
@@ -31,9 +31,6 @@ import Details from "./components/Approve Provider/Details";
 
 
 function App() {
-
-  const [statuses,setStatuses] = useState([]);
-
   const [token, setToken] = useState(() => {
     return localStorage.getItem("token") || "";
   });
@@ -53,17 +50,6 @@ function App() {
     }
     return children;
   };
-
-  // ฟังก์ชันสําหรับการบันทึก
-  const handleSaveEdit = (editedStatus) => {
-    setStatuses(statuses.map(type => 
-      type.id === editedStatus.id
-        ? editedStatus
-        : type
-    ));
-  };
-
-
 
   return (
     <HashRouter>

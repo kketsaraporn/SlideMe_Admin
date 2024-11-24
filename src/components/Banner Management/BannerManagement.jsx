@@ -63,7 +63,24 @@ function BannerManagement() {
     };
 
     const handleSaveClick = () => {
-        setShowPopup(true);
+        Swal.fire({
+            title: "ยืนยันที่จะบันทึกข้อมูล?",
+            text: "",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "บันทึก",
+            cancelButtonText: "ยกเลิก"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "เสร็จสิ้น!",
+                text: "",
+                icon: "success"
+              });
+            }
+          });
     };
 
     const handleConfirmSave = () => {
