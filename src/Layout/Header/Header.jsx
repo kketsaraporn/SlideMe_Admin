@@ -30,7 +30,7 @@ function Header({ handleSlide }) {
             alt="profile"
             className="profile-pic"
           />
-          <span className="fs-6 font-semibold">Somchai007</span>
+          <span className="fs-6 font-light">username007</span>
         </div>
       </div>
     </div>

@@ -49,12 +49,11 @@ function Login({ setToken, setRole, token }) {
       <div className="login-box">
         <div className="login-header text-center">
           <img src={logo} alt="Logo" className="logo" />
-         
-          <p>กรุณากรอกอีเมลและรหัสผ่านของคุณเพื่อดำเนินการต่อ</p>
+          <p className="login-detail">กรุณากรอกอีเมลและรหัสผ่านของคุณเพื่อดำเนินการต่อ</p>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="account" className="form-label">
+            <label htmlFor="account" className="form-label font-medium text-[14px]">
               Account Name
             </label>
             <input
@@ -67,7 +66,7 @@ function Login({ setToken, setRole, token }) {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">
+            <label htmlFor="password" className="form-label font-medium text-[14px]">
               Password
             </label>
             <input
@@ -84,7 +83,17 @@ function Login({ setToken, setRole, token }) {
               </a>
             </div>
           </div>
-          <button type="submit" className="btn btn-success w-100">
+          <div className="mb-3 form-check">
+            <input
+              type="checkbox"
+              id="rememberMe"
+              className="form-check-input"
+            />
+            <label htmlFor="rememberMe" className="form-check-label">
+              จดจำรหัสผ่าน
+            </label>
+          </div>
+          <button type="submit" className="btn login-btn w-100">
             เข้าสู่ระบบ
           </button>
         </form>

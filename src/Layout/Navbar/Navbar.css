@@ -2,7 +2,7 @@
     position: relative;
     min-width: 250px;
     width: 250px;
-    background-color: #2a822a;
+    background-color: #0D7342;
     color: white;
     min-height: 115vh;
     display: flex;
@@ -15,7 +15,7 @@
     position: relative;
     margin-left: -250px;
     width: 250px;
-    background-color: #2a822a;
+    background-color: #0D7342;
     color: white;
     min-height: 100vh;
     display: flex;
@@ -57,14 +57,13 @@
     transition: 0.4s;
     text-decoration: none;
     padding: 10px 15px;
-    /* background-color: #4aff4a; */
-    background-color: #4aff4a;
+    background-color: #03D069;
     border-radius: 10px;
 }
 
 .menu-item:hover {
     padding: 10px 15px;
-    background-color: #4aff4a;
+    background-color: #03D069;
     border-radius: 10px;
 }
 

@@ -1,6 +1,5 @@
 .login-container {
   background-image: url('../../imgs/zig-zag.png');
- 
   height: 100vh;
   display: flex;
   min-width: 100%;
@@ -18,11 +17,18 @@
   max-width: 90%; 
 }
 
+.login-box .form-label {
+  color: #202224;
+}
+
+.login-detail {
+  color: #202224;
+  font-weight: bold;
+}
 
 .login-header .logo {
   width: 250px; 
   height: 150px; 
-  
   margin: auto;
 }
 
@@ -39,11 +45,11 @@
   margin-bottom: 30px;
 }
 
-/* ปรับ input box */
 .form-control {
   border-radius: 15px; 
   padding: 15px; 
   font-size: 16px; 
+  background-color: #F1F4F9;
 }
 
 .form-check-label {
@@ -51,17 +57,20 @@
   color: #6c757d;
 }
 
-.btn-success {
+.login-btn {
   background-color: #28a745;
   border: none;
   border-radius: 15px;
   padding: 15px 20px; 
   font-size: 18px; 
   font-weight: bold; 
+  color: white;
+  transition: 0.5s;
 }
 
-.btn-success:hover {
+.login-btn:hover {
   background-color: #218838; 
+  color: white;
 }
 
 .btn-dark {
@@ -78,7 +87,7 @@
 }
 
 .forgot-password-link {
-  font-size: 14px; /* ขนาดตัวอักษร */
+  font-size: 14px;
   color: #6c757d;
   text-decoration: none;
   margin-top: 20px;

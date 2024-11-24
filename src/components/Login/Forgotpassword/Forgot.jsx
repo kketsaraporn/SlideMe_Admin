@@ -11,7 +11,7 @@ function Forgot() {
     if (email.includes('@')) {
       Swal.fire({
         title: "กู้คืนรหัสผ่านสำเร็จ!",
-        text: "คลิก Ok เพื่อไปหน้าล้อคอิน",
+        text: "คลิก Ok เพื่อไปหน้าล็อคอิน",
         icon: "success",
         confirmButtonText: "Ok",
       }).then(() => navigate("/"));
@@ -28,8 +28,7 @@ function Forgot() {
       <div className="login-box">
         <div className="login-header text-center">
           <img src={logo} alt="Logo" className="logo" />
-          <h3 className="mt-3">SLIDE ME</h3>
-          <p>กรุณากรอกอีเมลและรหัสผ่านของคุณเพื่อดำเนินการต่อ</p>
+          <p className="login-detail">กรุณากรอกอีเมลของคุณเพื่อดำเนินการต่อ</p>
         </div>
         <form>
           <div className="mb-3">
@@ -51,7 +50,7 @@ function Forgot() {
             type="submit"
             className="btn btn-success w-100"
           >
-            เข้าสู่ระบบ
+            รีเซ็ตรหัสผ่าน
           </button>
 
           <button

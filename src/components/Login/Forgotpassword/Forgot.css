@@ -17,11 +17,14 @@
     max-width: 90%; 
   }
   
+  .login-detail {
+    color: #202224;
+    font-weight: bold;
+  }
  
   .login-header .logo {
     width: 250px; 
     height: 150px; 
-    
     margin: auto;
   }
   
@@ -79,7 +82,7 @@
   }
   
   .forgot-password-link {
-    font-size: 14px; /* ขนาดตัวอักษร */
+    font-size: 14px; 
     color: #6c757d;
     text-decoration: none;
     margin-top: 20px;
