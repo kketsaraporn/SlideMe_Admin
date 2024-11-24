@@ -1,0 +1,33 @@
+.price-management {
+    padding: 20px;
+  }
+  
+  .price-table {
+    border: 3px solid #006400;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .price-table button {
+    background-color: #6c757d86;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    
+  }
+
+  th, td input {
+    border-radius: 5px;
+    
+  }

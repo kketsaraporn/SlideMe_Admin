@@ -68,11 +68,11 @@ function Sidebar({ slide, setToken, setRole }) {
             จัดการประเภทสไลด์
           </button>
         </Link>
-        <Link to="">
+        <Link to="/pricemanagement">
           {" "}
           <button
             className={`my-1 menu-item ${
-              currentTab.pathname === "" && "active"
+              currentTab.pathname === "/pricemanagement" && "active"
             }`}
           >
             จัดการอัตราค่าบริการ
@@ -141,10 +141,10 @@ function Sidebar({ slide, setToken, setRole }) {
             การใช้งานเว็บไซต์
           </button>
         </Link>
-        <Link to="">
+        <Link to="/aboutusmanagement">
           <button
             className={`my-1 menu-item ${
-              currentTab.pathname === "" && "active"
+              currentTab.pathname === "/aboutusmanagement" && "active"
             }`}
           >
             เกี่ยวกับเรา
