@@ -14,8 +14,6 @@ import Forgot from "./components/Login/Forgotpassword/Forgot";
 import CheckDriver from "./components/Review2/CheckDriver";
 import Checkorder from "./components/Checkorder/Checkorder";
 import Layout from "./Layout/layout/Layout";
-
-
 import BannerManagement from "./components/Banner Management/BannerManagement";
 
 function App() {
@@ -79,6 +77,8 @@ function App() {
           <Route path="/checkorder" element={<Checkorder />} />
 
           <Route path="/bannermanagement" element={<BannerManagement />} />
+
+          
         </Route>
 
         {/* Catch all route */}
