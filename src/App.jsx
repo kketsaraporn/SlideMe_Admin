@@ -28,6 +28,12 @@ import ApproveProvider from "./components/Approve provider/ApproveProvider";
 import EditStatus from "./components/Account Status/editstatus/editstatus";
 import DistanceManagement from "./components/Distance Management/DistanceManagement.JSX";
 import Details from "./components/Approve Provider/Details";
+import EditProvider from "./components/ProviderManagement/EditProvider/editProvider";
+import ProviderDetail from "./components/ProviderManagement/ProviderDetail/providerDetail";
+import User from "./components/UserManagement/User";
+import EditUser from "./components/UserManagement/EditUser/editUser";
+import UserDetail from "./components/UserManagement/UserDetail/userDetail";
+
 
 
 function App() {
@@ -124,7 +130,15 @@ function App() {
 
           <Route path="/approveprovider" element={<ApproveProvider />} />
           <Route path="/details/:id" element={<Details />} />
+
+          <Route path="/userManagement" element={<User />} />
+            <Route path="/edituser/:userId" element={<EditUser />} />
+            <Route path="/userdetail/:userId" element={<UserDetail />} />
           
+          <Route path="/providerManagement" element={<Provider />} /> 
+          <Route path="/editprovider/:providerId" element={<EditProvider />} />
+          <Route path="/providerdetail/:providerId" element={<ProviderDetail />} />
+
         </Route>
 
         {/* Catch all route */}

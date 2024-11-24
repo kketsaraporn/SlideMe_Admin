@@ -115,20 +115,20 @@ function Sidebar({ slide, setToken, setRole }) {
           </button>
         </Link>
 
-        <Link to="">
+        <Link to="/userManagement">
           <button
             className={`my-1 menu-item ${
-              currentTab.pathname === "" && "active"
+              currentTab.pathname === "/userManagement" && "active"
             }`}
           >
             User Management
           </button>
         </Link>
 
-        <Link to="/provider">
+        <Link to="/providerManagement">
           <button
             className={`my-1 menu-item ${
-              currentTab.pathname === "" && "active"
+              currentTab.pathname === "/providerManagement" && "active"
             }`}
           >
             Provider Management
