@@ -9,7 +9,7 @@
     background-color: #f9f9f9;
   }
   
-  table {
+  .price-table table {
     width: 100%;
     border-collapse: collapse;
   }
@@ -21,13 +21,13 @@
     border-radius: 5px;
   }
   
-  th, td {
+  .price-table th, td {
     padding: 10px;
     text-align: left;
     
   }
 
-  th, td input {
+  .price-table th, td input {
     border-radius: 5px;
     
   }

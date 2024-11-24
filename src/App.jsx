@@ -25,9 +25,13 @@ import EditPrice from "./components/Price Management/Edit Price/EditPrice";
 import AboutUsManagement from "./components/About Us Management/AboutUsManagement";
 import EditAboutUsManagement from "./components/About Us Management/Edit About Us Management/EditAboutUsManagement";
 import ApproveProvider from "./components/Approve provider/ApproveProvider";
+import EditStatus from "./components/Account Status/editstatus/editstatus";
 
 
 function App() {
+
+  const [statuses,setStatuses] = useState([]);
+
   const [token, setToken] = useState(() => {
     return localStorage.getItem("token") || "";
   });
@@ -47,6 +51,17 @@ function App() {
     }
     return children;
   };
+
+  // ฟังก์ชันสําหรับการบันทึก
+  const handleSaveEdit = (editedStatus) => {
+    setStatuses(statuses.map(type => 
+      type.id === editedStatus.id
+        ? editedStatus
+        : type
+    ));
+  };
+
+
 
   return (
     <HashRouter>
@@ -82,7 +97,8 @@ function App() {
           <Route path="/adminmanagement" element={<AdminManagement />} />
           <Route path="/edit-admin/:id" element={<EditAdminAccount />} />
           <Route path="/permission" element={<Permission />} />
-          <Route path="/status" element={<AccountStatus />} />
+          <Route path="/status" element={<AccountStatus  statuses={statuses} setStatuses={setStatuses}/>} />
+          <Route path="/edit/:id" element={<EditStatus statuses={statuses} onSave={handleSaveEdit} />} />
           <Route path="/pricemanagement" element={<PriceManagement />} />
           <Route path="/edit-price/:id" element={<EditPrice />} />
           <Route path="/review" element={<Review />} />

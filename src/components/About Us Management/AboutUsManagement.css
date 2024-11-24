@@ -3,9 +3,9 @@
     font-family: Arial, sans-serif;
   }
   
-  h2 {
+ /*  h2 {
     color: #000000;
-  }
+  } */
   
   .form-section {
     background-color: #f0fdf4;
@@ -19,7 +19,7 @@
     margin-bottom: 15px;
   }
   
-  label {
+  .form-check label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -72,28 +72,28 @@
     border: 2px solid #66bb6a;
   }
   
-  table {
+  .data-section table {
     width: 100%;
     border-collapse: collapse;
   }
   
-  th, td {
+  .data-section th, td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     
   }
   
-  th {
-    /* background-color: #858585; */
+/*   th {
+    
     color: rgb(5, 5, 5);
-  }
+  } */
   
   .thumbnail {
     width: 50px;
     height: auto;
   }
   
-  .delete-button {
+  .data-section .delete-button {
     background-color: #f44336;
     color: white;
     padding: 5px 10px;
