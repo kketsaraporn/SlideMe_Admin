@@ -21,6 +21,7 @@ import EditPrice from "./components/Price Management/Edit Price/EditPrice";
 import AboutUsManagement from "./components/About Us Management/AboutUsManagement";
 import EditAboutUsManagement from "./components/About Us Management/Edit About Us Management/EditAboutUsManagement";
 import ApproveProvider from "./components/Approve provider/ApproveProvider";
+import ProviderDetail from "./components/Approve Provider/Details"
 
 function App() {
   const [token, setToken] = useState(() => {
@@ -84,6 +85,7 @@ function App() {
           <Route path="/review/CheckDriver" element={<CheckDriver />} />
           <Route path="/adminaccmanagement" element={<AdminAccout />} />
           <Route path="/checkorder" element={<Checkorder />} />
+          <Route path="/providerdetail/:id" element={<ProviderDetail />} />
           <Route path="/bannermanagement" element={<BannerManagement />} />
           <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
           <Route path="/edit/:id" element={<EditAboutUsManagement />} />

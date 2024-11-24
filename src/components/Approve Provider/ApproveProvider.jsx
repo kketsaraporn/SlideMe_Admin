@@ -16,7 +16,7 @@ function ApproveProvider() {
   const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
   const handleCheck = (id) => {
-    navigate(`/details/${id}`);
+    navigate(`/providerdetail/${id}`);
   };
 
   const totalPages = Math.ceil(dummyData.length / itemsPerPage);
@@ -46,7 +46,7 @@ function ApproveProvider() {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>ลำดับ</th>
+            <th style={{textAlign: "center"}}>ลำดับ</th>
             <th>ชื่อร้าน</th>
             <th>ชื่อ-นามสกุล</th>
             <th style={{ width: "15%" }}>ที่อยู่</th>
@@ -59,7 +59,7 @@ function ApproveProvider() {
         <tbody>
           {currentItems.map((item, index) => (
             <tr key={item.id}>
-              <td>{indexOfFirstItem + index + 1}</td>
+              <td style={{ textAlign: "center" }}>{indexOfFirstItem + index + 1}</td>
               <td style={{ textAlign: "left" }}>{item.shopName}</td>
               <td style={{ textAlign: "left" }}>{item.fullName}</td>
               <td style={{ textAlign: "left" }}>{item.address}</td>
@@ -99,6 +99,7 @@ function ApproveProvider() {
             key={page}
             onClick={() => handlePageChange(page)}
             active={page === currentPage}
+            style={{width: "40px",backgroundColor:"#03D069",textAlign:"center",padding:"0px",margin:"0px"}}
           >
             {page}
           </Pagination.Item>
