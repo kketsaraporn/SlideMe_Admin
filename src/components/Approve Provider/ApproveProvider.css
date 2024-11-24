@@ -12,7 +12,7 @@
     font-weight: bold;
   }
   
-  button {
+  /* button {
     width: 148px;
     height: 40px;
     border-radius: 10px;
@@ -22,7 +22,7 @@
     font-size: 16px;
     font-weight: semi-bold;
     margin: 0.5rem;
-  }
+  } */
   
   .facebook-link{
     text-decoration: none;
@@ -43,18 +43,18 @@
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #ddd;
-    background-color: #03D069; /* สีเขียว */
-    color: white; /* สีข้อความ */
+    background-color: #03D069; 
+    color: white; 
     transition: background-color 0.3s, color 0.3s;
   }
   
   .pagination button:hover {
-    background-color: #02c759; /* สีเขียวเข้มเมื่อ hover */
-    color: white; /* สีข้อความเมื่อ hover */
+    background-color: #02c759; 
+    color: white; 
   }
   
   .pagination button.active {
-    background-color: #028e4e; /* สีเขียวเข้มเมื่อถูกเลือก */
+    background-color: #028e4e; 
     color: white;
     font-weight: bold;
   }
