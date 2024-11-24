@@ -136,7 +136,7 @@ function Sidebar({ slide, setToken, setRole }) {
               currentTab.pathname === "/bannermanagement" && "active"
             }`}
           >
-            Banner Management 1
+            Banner Management 2
           </button>
         </Link>
         <Link to="">
