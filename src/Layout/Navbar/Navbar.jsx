@@ -60,14 +60,14 @@ function Sidebar({ slide, setToken, setRole }) {
               currentTab.pathname === "/distancemanagement" && "active"
             }`}
           >
-            จัดการบัญชี Admin
+            จัดการระยะทาง
           </button>
         </Link>
 
-        <Link to="/">
+        <Link to="/vehiclemanage">
           <button
             className={`my-1 menu-item ${
-              currentTab.pathname === "" && "active"
+              currentTab.pathname === "/vehiclemanage" && "active"
             }`}
           >
             จัดการประเภทสไลด์
@@ -111,7 +111,7 @@ function Sidebar({ slide, setToken, setRole }) {
               currentTab.pathname === "/review" && "active"
             }`}
           >
-            จัดการช้อมูลรีวิว
+            จัดกาารข้อมูลรีวิว
           </button>
         </Link>
 
