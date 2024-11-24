@@ -1,0 +1,43 @@
+.provider-container {
+  width: 1405px;
+  height: auto;
+  margin: 1rem auto;
+  border: 4px solid #198833;
+  border-radius: 5px;
+  font-family: "Prompt", sans-serif;
+}
+
+.details-button,
+.edit-button {
+  width: 90px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  border: none;
+  color: black;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+.edit-button {
+  text-align: center;
+}
+
+.delete-button {
+  width: 90px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  font-weight: bold;
+}

@@ -50,13 +50,13 @@ function Sidebar({ slide, setToken, setRole }) {
             สถานะบัญชี
           </button>
         </Link>
-        <Link to="/adminaccmanagement">
+        <Link to="/distance">
           <button
             className={`my-1 menu-item font-semibold ${
-              currentTab.pathname === "/adminaccmanagement" && "active"
+              currentTab.pathname === "/distance" && "active"
             }`}
           >
-            จัดการบัญชี Admin
+            จัดการระยะทาง
           </button>
         </Link>
         <Link to="/">
@@ -114,10 +114,10 @@ function Sidebar({ slide, setToken, setRole }) {
             User Management
           </button>
         </Link>
-        <Link to="">
+        <Link to="/provider">
           <button
             className={`my-1 menu-item font-semibold ${
-              currentTab.pathname === "" && "active"
+              currentTab.pathname === "/provider" && "active"
             }`}
           >
             Provider Management

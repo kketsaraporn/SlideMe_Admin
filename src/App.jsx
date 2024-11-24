@@ -11,9 +11,11 @@ import AccountStatus from "./components/Account Status/AccountStatus";
 import AdminAccout from "./components/Admin Account Management/AdminAccout";
 import Login from "./components/Login/Login";
 import Forgot from "./components/Login/Forgotpassword/Forgot";
-import CheckDriver from "./components/Review2/CheckDriver";
+import CheckDriver from "./components/Check Driver Reviews/CheckDriver";
 import Checkorder from "./components/Checkorder/Checkorder";
 import Layout from "./Layout/layout/Layout";
+import Provider from "./components/ProviderManagement/Provider";
+import Distance from "./components/Distance/Distance";
 
 function App() {
   const [token, setToken] = useState(() => {
@@ -69,11 +71,13 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/adminmanagement" element={<AdminManagement />} />
           <Route path="/permission" element={<Permission />} />
-          <Route path="/review" element={<Review />} />
-          <Route path="/review/CheckDriver" element={<CheckDriver />} />
           <Route path="/status" element={<AccountStatus />} />
           <Route path="/adminaccmanagement" element={<AdminAccout />} />
           <Route path="/checkorder" element={<Checkorder />} />
+          <Route path="/review" element={<Review />} />
+          <Route path="/review/CheckDriver" element={<CheckDriver />} />
+          <Route path="/provider" element={<Provider/>}/>
+          <Route path="/distance" element={<Distance/>}/>
         </Route>
 
         {/* Catch all route */}

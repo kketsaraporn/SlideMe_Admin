@@ -26,7 +26,6 @@ function Login({ setToken, setRole, token }) {
         localStorage.setItem("role", userInfo.role);
         setToken(userInfo.token);
         setRole(userInfo.role);
-        // navigate("/dashboard");
       });
     } else {
       Swal.fire({
