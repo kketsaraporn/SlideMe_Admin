@@ -49,7 +49,7 @@ function Login({ setToken, setRole, token }) {
       <div className="login-box">
         <div className="login-header text-center">
           <img src={logo} alt="Logo" className="logo" />
-          <h3 className="mt-3">SLIDE ME</h3>
+         
           <p>กรุณากรอกอีเมลและรหัสผ่านของคุณเพื่อดำเนินการต่อ</p>
         </div>
         <form onSubmit={handleSubmit}>
