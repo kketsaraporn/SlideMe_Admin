@@ -7,7 +7,7 @@
   font-family: "Prompt", sans-serif;
 }
 
-.details-button,
+.provider-container .details-button,
 .edit-button {
   width: 90px;
   height: 25px;
@@ -23,11 +23,11 @@
   font-weight: bold;
 }
 
-.edit-button {
+.provider-container .edit-button {
   text-align: center;
 }
 
-.delete-button {
+.provider-container .delete-button {
   width: 90px;
   height: 25px;
   font-size: 15px;

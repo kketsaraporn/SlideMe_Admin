@@ -10,7 +10,7 @@
   max-width: 95%; /* จำกัดความกว้างสูงสุด */
 }
 
-.form-group {
+.editProvider-container .form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;

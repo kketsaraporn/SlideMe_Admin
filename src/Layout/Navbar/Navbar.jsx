@@ -15,7 +15,7 @@ function Sidebar({ slide, setToken, setRole }) {
       <ul className="sidebar-menu">
         <Link to="/dashboard">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               (currentTab.pathname === "/dashboard" && "active") ||
               (currentTab.pathname === "/" && "active")
             }`}
@@ -25,7 +25,7 @@ function Sidebar({ slide, setToken, setRole }) {
         </Link>
         <Link to="/adminmanagement">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/adminmanagement" && "active"
             }`}
           >
@@ -35,7 +35,7 @@ function Sidebar({ slide, setToken, setRole }) {
 
         <Link to="/permission">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/permission" && "active"
             }`}
           >
@@ -45,7 +45,7 @@ function Sidebar({ slide, setToken, setRole }) {
 
         <Link to="/status">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/status" && "active"
             }`}
           >
@@ -55,7 +55,7 @@ function Sidebar({ slide, setToken, setRole }) {
 
         <Link to="/adminaccmanagement">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/adminaccmanagement" && "active"
             }`}
           >
@@ -65,18 +65,18 @@ function Sidebar({ slide, setToken, setRole }) {
 
         <Link to="/">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "" && "active"
             }`}
           >
             จัดการประเภทสไลด์
           </button>
         </Link>
-
+ 
         <Link to="/pricemanagement">
           {" "}
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/pricemanagement" && "active"
             }`}
           >
@@ -85,7 +85,7 @@ function Sidebar({ slide, setToken, setRole }) {
         </Link>
         <Link to="/checkorder">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/checkorder" && "active"
             }`}
           >
@@ -95,7 +95,7 @@ function Sidebar({ slide, setToken, setRole }) {
 
         <Link to="/approveprovider">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/approveprovider" && "active"
             }`}
           >
@@ -105,7 +105,7 @@ function Sidebar({ slide, setToken, setRole }) {
 
         <Link to="/review">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/review" && "active"
             }`}
           >
@@ -114,7 +114,7 @@ function Sidebar({ slide, setToken, setRole }) {
         </Link>
         <Link to="">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "" && "active"
             }`}
           >
@@ -132,7 +132,7 @@ function Sidebar({ slide, setToken, setRole }) {
         </Link>
         <Link to="/bannermanagement">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/bannermanagement" && "active"
             }`}
           >
@@ -141,7 +141,7 @@ function Sidebar({ slide, setToken, setRole }) {
         </Link>
         <Link to="">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "" && "active"
             }`}
           >
@@ -150,7 +150,7 @@ function Sidebar({ slide, setToken, setRole }) {
         </Link>
         <Link to="/aboutusmanagement">
           <button
-            className={`my-1 menu-item ${
+            className={`my-1 menu-item font-semibold ${
               currentTab.pathname === "/aboutusmanagement" && "active"
             }`}
           >
