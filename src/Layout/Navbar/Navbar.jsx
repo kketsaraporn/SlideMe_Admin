@@ -23,6 +23,7 @@ function Sidebar({ slide, setToken, setRole }) {
             Dashboard
           </button>
         </Link>
+
         <Link to="/adminmanagement">
           <button
             className={`my-1 menu-item font-semibold ${
@@ -53,10 +54,10 @@ function Sidebar({ slide, setToken, setRole }) {
           </button>
         </Link>
 
-        <Link to="/adminaccmanagement">
+        <Link to="/distancemanagement">
           <button
             className={`my-1 menu-item font-semibold ${
-              currentTab.pathname === "/adminaccmanagement" && "active"
+              currentTab.pathname === "/distancemanagement" && "active"
             }`}
           >
             จัดการระยะทาง
@@ -83,6 +84,7 @@ function Sidebar({ slide, setToken, setRole }) {
             จัดการอัตราค่าบริการ
           </button>
         </Link>
+
         <Link to="/checkorder">
           <button
             className={`my-1 menu-item font-semibold ${
@@ -112,6 +114,7 @@ function Sidebar({ slide, setToken, setRole }) {
             จัดการช้อมูลรีวิว
           </button>
         </Link>
+
         <Link to="">
           <button
             className={`my-1 menu-item font-semibold ${
@@ -121,6 +124,7 @@ function Sidebar({ slide, setToken, setRole }) {
             User Management
           </button>
         </Link>
+
         <Link to="/provider">
           <button
             className={`my-1 menu-item font-semibold ${
@@ -130,6 +134,7 @@ function Sidebar({ slide, setToken, setRole }) {
             Provider Management
           </button>
         </Link>
+
         <Link to="/bannermanagement">
           <button
             className={`my-1 menu-item font-semibold ${
@@ -139,6 +144,7 @@ function Sidebar({ slide, setToken, setRole }) {
             Banner Management
           </button>
         </Link>
+
         <Link to="">
           <button
             className={`my-1 menu-item font-semibold ${
@@ -148,6 +154,7 @@ function Sidebar({ slide, setToken, setRole }) {
             การใช้งานเว็บไซต์
           </button>
         </Link>
+
         <Link to="/aboutusmanagement">
           <button
             className={`my-1 menu-item font-semibold ${
