@@ -11,12 +11,12 @@ import AccountStatus from "./components/Account Status/AccountStatus";
 import AdminAccout from "./components/Admin Account Management/AdminAccout";
 import Login from "./components/Login/Login";
 import Forgot from "./components/Login/Forgotpassword/Forgot";
-import CheckDriver from "./components/Check Driver Reviews/CheckDriver";
+import CheckDriver from "./components/Review2/CheckDriver";
 import Checkorder from "./components/Checkorder/Checkorder";
 import Layout from "./Layout/layout/Layout";
 
 import Provider from "./components/ProviderManagement/Provider";
-import Distance from "./components/Distance/Distance";
+
 
 import BannerManagement from "./components/Banner Management/BannerManagement";
 import EditAdminAccount from "./components/Admin Management/Edit Admin Account/EditAdminAccount";
@@ -26,12 +26,11 @@ import AboutUsManagement from "./components/About Us Management/AboutUsManagemen
 import EditAboutUsManagement from "./components/About Us Management/Edit About Us Management/EditAboutUsManagement";
 import ApproveProvider from "./components/Approve provider/ApproveProvider";
 import EditStatus from "./components/Account Status/editstatus/editstatus";
+import DistanceManagement from "./components/Distance Management/DistanceManagement.JSX";
+import Details from "./components/Approve Provider/Details";
 
 
 function App() {
-
-  const [statuses,setStatuses] = useState([]);
-
   const [token, setToken] = useState(() => {
     return localStorage.getItem("token") || "";
   });
@@ -51,17 +50,6 @@ function App() {
     }
     return children;
   };
-
-  // ฟังก์ชันสําหรับการบันทึก
-  const handleSaveEdit = (editedStatus) => {
-    setStatuses(statuses.map(type => 
-      type.id === editedStatus.id
-        ? editedStatus
-        : type
-    ));
-  };
-
-
 
   return (
     <HashRouter>
@@ -94,22 +82,34 @@ function App() {
         >
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<Dashboard />} />
+
           <Route path="/adminmanagement" element={<AdminManagement />} />
           <Route path="/edit-admin/:id" element={<EditAdminAccount />} />
+
           <Route path="/permission" element={<Permission />} />
+
           <Route path="/status" element={<AccountStatus  statuses={statuses} setStatuses={setStatuses}/>} />
           <Route path="/edit/:id" element={<EditStatus statuses={statuses} onSave={handleSaveEdit} />} />
+
+          <Route path="/distancemanagement" element={<DistanceManagement />} />
+
           <Route path="/pricemanagement" element={<PriceManagement />} />
           <Route path="/edit-price/:id" element={<EditPrice />} />
+
           <Route path="/review" element={<Review />} />
           <Route path="/review/CheckDriver" element={<CheckDriver />} />
+
           <Route path="/adminaccmanagement" element={<AdminAccout />} />
+
           <Route path="/checkorder" element={<Checkorder />} />
+
           <Route path="/bannermanagement" element={<BannerManagement />} />
+
           <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
           <Route path="/edit/:id" element={<EditAboutUsManagement />} />
 
           <Route path="/approveprovider" element={<ApproveProvider />} />
+          <Route path="/details/:id" element={<Details />} />
           
         </Route>
 

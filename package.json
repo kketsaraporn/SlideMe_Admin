@@ -13,6 +13,7 @@
   "dependencies": {
     "@highcharts/map-collection": "^2.3.0",
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "highcharts": "^11.4.8",
     "highcharts-react-official": "^3.2.1",
     "project205": "file:",
