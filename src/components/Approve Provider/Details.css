@@ -1,0 +1,81 @@
+.details-container {
+  width: 90%;
+  height: auto;
+  margin: 1rem auto;
+  border: 4px solid #198833;
+  border-radius: 5px;
+  font-family: "Prompt", sans-serif;
+}
+
+.file-container {
+  display: flex;
+  flex-wrap: wrap; /* อนุญาตให้องค์ประกอบลงบรรทัดใหม่หากพื้นที่ไม่พอ */
+  justify-content: center;
+  gap: 1rem;
+}
+
+.file-container div {
+  flex: 1 1 150px; /* ขนาดขั้นต่ำคือ 150px และยืดได้ตามพื้นที่ */
+  max-width: 200px; /* จำกัดขนาดสูงสุด */
+}
+
+.button-container button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .button-container button {
+    width: 100%; /* ปุ่มเต็มความกว้าง */
+  }
+}
+
+img {
+  width: 100%; /* ทำให้ภาพปรับตาม container */
+  max-width: 150px;
+  height: auto; /* รักษาอัตราส่วน */
+}
+
+/* สำหรับหน้าจอมือถือ */
+@media (max-width: 768px) {
+  .details-container {
+    width: 100%;
+    border: 2px solid #198833;
+    padding: 1rem;
+  }
+
+  .file-container {
+    display: block; /* จัดเรียงแนวตั้ง */
+    text-align: center;
+  }
+
+  .file-container div {
+    margin-bottom: 1rem;
+  }
+
+  .button-container {
+    justify-content: center;
+  }
+
+  .button-container button {
+    margin: 0.5rem;
+    width: 100%;
+  }
+}
+
+/* สำหรับหน้าจอแท็บเล็ต */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .details-container {
+    width: 90%;
+  }
+
+  .file-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* สร้าง 2 คอลัมน์ */
+    gap: 1rem;
+  }
+}
+
+
+
