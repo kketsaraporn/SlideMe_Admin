@@ -14,6 +14,10 @@ import Forgot from "./components/Login/Forgotpassword/Forgot";
 import CheckDriver from "./components/Review2/CheckDriver";
 import Checkorder from "./components/Checkorder/Checkorder";
 import Layout from "./Layout/layout/Layout";
+
+import Provider from "./components/ProviderManagement/Provider";
+
+
 import BannerManagement from "./components/Banner Management/BannerManagement";
 import EditAdminAccount from "./components/Admin Management/Edit Admin Account/EditAdminAccount";
 import PriceManagement from "./components/Price Management/PriceManagement";
@@ -21,7 +25,10 @@ import EditPrice from "./components/Price Management/Edit Price/EditPrice";
 import AboutUsManagement from "./components/About Us Management/AboutUsManagement";
 import EditAboutUsManagement from "./components/About Us Management/Edit About Us Management/EditAboutUsManagement";
 import ApproveProvider from "./components/Approve provider/ApproveProvider";
-import ProviderDetail from "./components/Approve Provider/Details"
+import EditStatus from "./components/Account Status/editstatus/editstatus";
+import DistanceManagement from "./components/Distance Management/DistanceManagement.JSX";
+import Details from "./components/Approve Provider/Details";
+
 
 function App() {
   const [token, setToken] = useState(() => {
@@ -75,22 +82,33 @@ function App() {
         >
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<Dashboard />} />
+
           <Route path="/adminmanagement" element={<AdminManagement />} />
           <Route path="/edit-admin/:id" element={<EditAdminAccount />} />
+
           <Route path="/permission" element={<Permission />} />
-          <Route path="/status" element={<AccountStatus />} />
+
+          <Route path="/status" element={<AccountStatus  statuses={statuses} setStatuses={setStatuses}/>} />
+          <Route path="/edit/:id" element={<EditStatus statuses={statuses} onSave={handleSaveEdit} />} />
+
+          <Route path="/distancemanagement" element={<DistanceManagement />} />
+
           <Route path="/pricemanagement" element={<PriceManagement />} />
           <Route path="/edit-price/:id" element={<EditPrice />} />
+
           <Route path="/review" element={<Review />} />
           <Route path="/review/CheckDriver" element={<CheckDriver />} />
+
           <Route path="/adminaccmanagement" element={<AdminAccout />} />
+
           <Route path="/checkorder" element={<Checkorder />} />
-          <Route path="/providerdetail/:id" element={<ProviderDetail />} />
           <Route path="/bannermanagement" element={<BannerManagement />} />
+
           <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
           <Route path="/edit/:id" element={<EditAboutUsManagement />} />
 
           <Route path="/approveprovider" element={<ApproveProvider />} />
+          <Route path="/details/:id" element={<Details />} />
           
         </Route>
 
