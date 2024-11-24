@@ -95,7 +95,7 @@ function Checkorder() {
         </thead>
         <tbody>
           {currentData.map((item) => (
-            <tr onClick={()=>console.log('123')} key={item.order_number}>
+            <tr key={item.order_number}>
               <td className="align-middle text-center">{item.date}</td>
               <td className="align-middle text-sm">{item.order_number}</td>
               <td className="align-middle">{item.username}</td>
