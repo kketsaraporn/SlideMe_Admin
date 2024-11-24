@@ -30,8 +30,8 @@ const AboutUsManagement = () => {
     setAboutUsData([...aboutUsData, newEntry]);// เพิ่มข้อมูลใหม่ลงในรายการทั้งหมด
     clearForm();// ล้างฟอร์มหลังจากบันทึกเสร็จ
     Swal.fire({
-      title: "บันทึกข้อมูล!",
-      text: "ข้อมูลบันทึกสำเร็จ!",
+      title: "บันทึกข้อมูลสำเร็จ!",
+      text: "ข้อมูลถูกบันทึก",
       icon: "success"
     });
   };

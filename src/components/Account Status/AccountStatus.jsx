@@ -16,7 +16,11 @@ function AccountStatus({ statuses, setStatuses }) {
   // ฟังก์ชันสําหรับการบันทึก
   const handleSave = () => {
     if (!accountName || (!status && !editingId)) {
-      alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+      Swal.fire({
+        title: "ล้มเหลว",
+        text: "กรุณาตรวจสอบข้อมูลอีกครั้ง",
+        icon: "warning"
+      });
       return;
     }
 
@@ -32,6 +36,7 @@ function AccountStatus({ statuses, setStatuses }) {
           : type
       ));
       setEditingId(null);
+      
     } else {
       const newStatus = {
         id: statuses.length + 1,
@@ -43,6 +48,7 @@ function AccountStatus({ statuses, setStatuses }) {
 
     setAccountName('');
     setStatus(false);
+    
   };
 
   // ฟังก์ชันสําหรับการลบ
