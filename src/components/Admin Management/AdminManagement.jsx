@@ -141,7 +141,7 @@ const AdminManagement = () => {
             ))}
           </tbody>
         </table>
-        <div className="admin-list-pagination">
+        <div className="pagination">
           <p>Showing 1 - 2 of 4</p>
         </div>
       </div>

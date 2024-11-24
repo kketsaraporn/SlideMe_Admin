@@ -74,23 +74,18 @@ const EditAboutUsManagement = () => {
             />
             {image && <img src={image} alt="Preview" className="image-preview" />}
           </div>
-          <div className="form-check form-switch">
+          <div className="form-group">
             <label>สถานะ</label>
             <input 
-              className='form-check-input'
-              type='checkbox'
-              role='switch'
-              id='flexSwitchCheckChecked'
-              style={{ margin: 0, justifyContent: 'flex-start' }} 
+              className="status-checkbox"
+              type="checkbox" 
               checked={status} 
-              onChange={() => setStatus(!status)}
+              onChange={() => setStatus(!status)} 
             />
           </div>
 
-          <div className="button-group">
-  <button type="button" onClick={handleSave} className="save-button">บันทึก</button>
-  <button type="button" onClick={clearForm} className="cancel-button">ยกเลิก</button>
-</div>
+          <button type="button" onClick={handleSave} className="save-button">บันทึก</button>
+          <button type="button" onClick={clearForm} className="cancel-button">ยกเลิก</button>
         </form>
       </div>
     </div>

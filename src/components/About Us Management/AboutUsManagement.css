@@ -3,9 +3,9 @@
     font-family: Arial, sans-serif;
   }
   
- /*  h2 {
+  h2 {
     color: #000000;
-  } */
+  }
   
   .form-section {
     background-color: #f0fdf4;
@@ -19,7 +19,7 @@
     margin-bottom: 15px;
   }
   
-  .form-check label {
+  label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -72,28 +72,28 @@
     border: 2px solid #66bb6a;
   }
   
-  .data-section table {
+  table {
     width: 100%;
     border-collapse: collapse;
   }
   
-  .data-section th, td {
+  th, td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     
   }
   
-/*   th {
-    
+  th {
+    /* background-color: #858585; */
     color: rgb(5, 5, 5);
-  } */
+  }
   
   .thumbnail {
     width: 50px;
     height: auto;
   }
   
-  .data-section .delete-button {
+  .delete-button {
     background-color: #f44336;
     color: white;
     padding: 5px 10px;

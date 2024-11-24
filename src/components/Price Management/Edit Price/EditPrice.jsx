@@ -6,11 +6,28 @@ function EditPrice() {
     const { id } = useParams();
     const navigate = useNavigate();
     const [showPopup, setShowPopup] = useState(false);
-  
+     
     // ฟังก์ชันแสดงป๊อปอัป
     const handleSaveClick = (e) => { // เพิ่ม: ป้องกันการส่งฟอร์มเมื่อคลิกบันทึก
       e.preventDefault(); // เพิ่ม: ไม่ให้ฟอร์มถูกส่งทันที
-      setShowPopup(true);
+      Swal.fire({
+        title: "ยืนยันที่จะบันทึกข้อมูล?",
+        text: "",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "บันทึก",
+        cancelButtonText: "ยกเลิก"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "เสร็จสิ้น!",
+            text: "",
+            icon: "success"
+          }).then(()=>navigate('/'))
+        }
+      });
     };
   
     // ฟังก์ชันยืนยันการบันทึก

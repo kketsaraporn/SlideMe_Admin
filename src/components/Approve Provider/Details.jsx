@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Details.css";
 import { useParams, useNavigate } from "react-router-dom";
 import dummyData from "../../data/dummyData";
+import filespic from "../../imgs/file-icon.png";
 
 function Details() {
   const { id } = useParams();
@@ -15,7 +16,7 @@ function Details() {
     dummyData.length = 0;
     dummyData.push(...updatedData);
 
-    navigate("/distance");
+    navigate("/approveprovider");
   };
 
   const handleReject = () => {
@@ -27,7 +28,7 @@ function Details() {
     dummyData.length = 0;
     dummyData.push(...updatedData);
 
-    navigate("/distance");
+    navigate("/approveprovider");
   };
 
   return (
@@ -39,7 +40,7 @@ function Details() {
         <div>
           <a href="/รถลาก6ล้อ.pdf" download="รถลาก6ล้อ.pdf">
             <img
-              src="/file-icon.png"
+              src={filespic}
               alt="ดาวน์โหลด"
               style={{ width: "150px", height: "180px" }}
             />
@@ -49,7 +50,7 @@ function Details() {
         <div>
           <a href="/ใบขับขี่.pdf" download="ใบขับขี่.pdf">
             <img
-              src="/file-icon.png"
+              src={filespic}
               alt="ดาวน์โหลด"
               style={{ width: "150px", height: "180px" }}
             />
@@ -59,7 +60,7 @@ function Details() {
         <div>
           <a href="/บัตรปชช.pdf" download="บัตรปชช.pdf">
             <img
-              src="/file-icon.png"
+              src={filespic}
               alt="ดาวน์โหลด"
               style={{ width: "150px", height: "180px" }}
             />
@@ -69,7 +70,7 @@ function Details() {
         <div>
           <a href="/เล่มทะเบียน.pdf" download="เล่มทะเบียน.pdf">
             <img
-              src="/file-icon.png"
+              src={filespic}
               alt="ดาวน์โหลด"
               style={{ width: "150px", height: "180px" }}
             />
@@ -79,7 +80,7 @@ function Details() {
         <div>
           <a href="/พรบ.pdf" download="พรบ.pdf">
             <img
-              src="/file-icon.png"
+              src={filespic}
               alt="ดาวน์โหลด"
               style={{ width: "150px", height: "180px" }}
             />

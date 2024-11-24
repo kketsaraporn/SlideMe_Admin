@@ -29,6 +29,11 @@ const AboutUsManagement = () => {
     };
     setAboutUsData([...aboutUsData, newEntry]);// เพิ่มข้อมูลใหม่ลงในรายการทั้งหมด
     clearForm();// ล้างฟอร์มหลังจากบันทึกเสร็จ
+    Swal.fire({
+      title: "บันทึกข้อมูล!",
+      text: "ข้อมูลบันทึกสำเร็จ!",
+      icon: "success"
+    });
   };
 
   // ฟังก์ชันสำหรับล้างข้อมูลในฟอร์ม

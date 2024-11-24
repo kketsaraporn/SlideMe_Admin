@@ -3,9 +3,9 @@
     font-family: Arial, sans-serif;
   }
   
-/*   h2 {
+  h2 {
     color: #000000;
-  } */
+  }
   
   .form-section {
     background-color: #f0fdf4;
@@ -19,11 +19,11 @@
     margin-bottom: 15px;
   }
   
-/*   label {
+  label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-  } */
+  }
   
   input[type="text"], textarea {
     width: 100%;
@@ -64,25 +64,11 @@
   }
   
   .cancel-button {
-    background-color: #df1616;
+    background-color: #000000;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
   }
-
-/*   .button-group .save-button, .cancel-button {
-    margin-top: 20px; 
-  } */
-  
-
-
-  .form-check {
-    display: flex;
-    align-items: center; /* จัดแนวกลางแนวตั้ง */
-    margin-bottom: 15px; /* เพิ่มระยะห่างจากปุ่ม */
-  }
-  
-
   
