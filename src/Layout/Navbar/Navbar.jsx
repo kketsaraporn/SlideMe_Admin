@@ -32,6 +32,7 @@ function Sidebar({ slide, setToken, setRole }) {
             Admin Management
           </button>
         </Link>
+
         <Link to="/permission">
           <button
             className={`my-1 menu-item ${
@@ -41,6 +42,7 @@ function Sidebar({ slide, setToken, setRole }) {
             Permission
           </button>
         </Link>
+
         <Link to="/status">
           <button
             className={`my-1 menu-item ${
@@ -50,6 +52,7 @@ function Sidebar({ slide, setToken, setRole }) {
             สถานะบัญชี
           </button>
         </Link>
+
         <Link to="/adminaccmanagement">
           <button
             className={`my-1 menu-item ${
@@ -59,6 +62,7 @@ function Sidebar({ slide, setToken, setRole }) {
             จัดการบัญชี Admin
           </button>
         </Link>
+
         <Link to="/">
           <button
             className={`my-1 menu-item ${
@@ -68,6 +72,7 @@ function Sidebar({ slide, setToken, setRole }) {
             จัดการประเภทสไลด์
           </button>
         </Link>
+
         <Link to="/pricemanagement">
           {" "}
           <button
@@ -87,15 +92,17 @@ function Sidebar({ slide, setToken, setRole }) {
             ตรวจสอบ Order
           </button>
         </Link>
-        <Link to="">
+
+        <Link to="/approveprovider">
           <button
             className={`my-1 menu-item ${
-              currentTab.pathname === "" && "active"
+              currentTab.pathname === "/approveprovider" && "active"
             }`}
           >
             ตรวจสอบการสมัคร
           </button>
         </Link>
+
         <Link to="/review">
           <button
             className={`my-1 menu-item ${

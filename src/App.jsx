@@ -20,6 +20,7 @@ import PriceManagement from "./components/Price Management/PriceManagement";
 import EditPrice from "./components/Price Management/Edit Price/EditPrice";
 import AboutUsManagement from "./components/About Us Management/AboutUsManagement";
 import EditAboutUsManagement from "./components/About Us Management/Edit About Us Management/EditAboutUsManagement";
+import ApproveProvider from "./components/Approve provider/ApproveProvider";
 
 function App() {
   const [token, setToken] = useState(() => {
@@ -87,6 +88,7 @@ function App() {
           <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
           <Route path="/edit/:id" element={<EditAboutUsManagement />} />
 
+          <Route path="/approveprovider" element={<ApproveProvider />} />
           
         </Route>
 
