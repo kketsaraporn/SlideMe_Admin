@@ -15,6 +15,9 @@ import CheckDriver from "./components/Review2/CheckDriver";
 import Checkorder from "./components/Checkorder/Checkorder";
 import Layout from "./Layout/layout/Layout";
 
+
+import BannerManagement from "./components/Banner Management/BannerManagement";
+
 function App() {
   const [token, setToken] = useState(() => {
     return localStorage.getItem("token") || "";
@@ -74,6 +77,8 @@ function App() {
           <Route path="/status" element={<AccountStatus />} />
           <Route path="/adminaccmanagement" element={<AdminAccout />} />
           <Route path="/checkorder" element={<Checkorder />} />
+
+          <Route path="/bannermanagement" element={<BannerManagement />} />
         </Route>
 
         {/* Catch all route */}
