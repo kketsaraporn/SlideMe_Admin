@@ -29,7 +29,7 @@ function Sidebar({ slide, setToken, setRole }) {
               currentTab.pathname === "/adminmanagement" && "active"
             }`}
           >
-            Admin Management
+            Admin Managemen
           </button>
         </Link>
 
