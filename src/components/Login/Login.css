@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.login-container .login-box {
+.login-box {
   background-color: white;
   padding: 50px; 
   border-radius: 20px;
@@ -17,47 +17,47 @@
   max-width: 90%; 
 }
 
-.login-container .login-box .form-label {
+.login-box .form-label {
   color: #202224;
 }
 
-.login-container .login-detail {
+.login-detail {
   color: #202224;
   font-weight: bold;
 }
 
-.login-container .login-header .logo {
+.login-header .logo {
   width: 250px; 
   height: 150px; 
   margin: auto;
 }
 
-.login-container .login-header h3 {
+.login-header h3 {
   color: #28a745; 
   font-size: 28px; 
   font-weight: bold;
   margin-top: 20px;
 }
 
-.login-container .login-header p {
+.login-header p {
   color: #6c757d;
   font-size: 16px;
   margin-bottom: 30px;
 }
 
-.login-container .form-control {
+.form-control {
   border-radius: 15px; 
   padding: 15px; 
   font-size: 16px; 
   background-color: #F1F4F9;
 }
 
-.login-container .form-check-label {
+.form-check-label {
   font-size: 14px; 
   color: #6c757d;
 }
 
-.login-container .login-btn {
+.login-btn {
   background-color: #28a745;
   border: none;
   border-radius: 15px;
@@ -68,12 +68,12 @@
   transition: 0.5s;
 }
 
-.login-container .login-btn:hover {
+.login-btn:hover {
   background-color: #218838; 
   color: white;
 }
 
-.login-container .btn-dark {
+.btn-dark {
   background-color: #28a745;
   border: none;
   border-radius: 15px; 
@@ -82,17 +82,17 @@
   font-weight: bold; 
 }
 
-.login-container .btn-dark:hover {
+.btn-dark:hover {
   background-color: #218838; 
 }
 
-.login-container .forgot-password-link {
+.forgot-password-link {
   font-size: 14px;
   color: #6c757d;
   text-decoration: none;
   margin-top: 20px;
 }
 
-.login-container .forgot-password-link:hover {
+.forgot-password-link:hover {
   text-decoration: underline;
 }

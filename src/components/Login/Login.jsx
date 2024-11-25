@@ -63,7 +63,6 @@ function Login({ setToken, setRole, token }) {
               placeholder="ชื่อบัญชี"
               value={account}
               onChange={(e) => setAccount(e.target.value.trim())}
-              style={{borderRadius: "5px"}}
             />
           </div>
           <div className="mb-3">
@@ -77,7 +76,6 @@ function Login({ setToken, setRole, token }) {
               placeholder="รหัสผ่าน"
               value={password}
               onChange={(e) => setPassword(e.target.value.trim())}
-              style={{borderRadius: "5px"}}
             />
             <div onClick={() => navigate("/forgot")} className="text-end mt-1">
               <a className="forgot-password-link cursor-pointer">
