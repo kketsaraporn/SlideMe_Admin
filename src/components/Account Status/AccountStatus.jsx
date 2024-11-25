@@ -51,7 +51,7 @@ function AccountStatus({ statuses, setStatuses }) {
   };
 
   return (
-    <div className="container">
+    <div className="status-container">
       <h1>Account Status Management</h1>
 
       <div className="form-container">

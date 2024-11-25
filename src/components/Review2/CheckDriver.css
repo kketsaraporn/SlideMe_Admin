@@ -5,17 +5,17 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .table th, .table td {
+  .review-container .table th, .table td {
     vertical-align: middle;
   }
   
-  .table th {
+  .review-container .table th {
     background-color: #343a40;
     color: white;
     text-align: center;
   }
   
-  .table td {
+  .review-container .table td {
     text-align: left;
   }
   

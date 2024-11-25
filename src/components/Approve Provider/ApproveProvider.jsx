@@ -16,7 +16,7 @@ function ApproveProvider() {
   const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
   const handleCheck = (id) => {
-    navigate(`/providerdetail/${id}`);
+    navigate(`/details/${id}`);
   };
 
   const totalPages = Math.ceil(dummyData.length / itemsPerPage);

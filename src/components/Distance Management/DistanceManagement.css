@@ -11,36 +11,36 @@
   font-family: 'Prompt', sans-serif;
 }
 
-.text-approve {
+.container-approve .text-approve {
   margin: 1rem;
   font-size: 20px;
   font-weight: bold;
 }
 
-.context-approve {
+.container-approve .context-approve {
     margin: 1rem;
     font-size: 18px;
     font-weight: semi-bold;
 }
 
-.input-approve {
+.container-approve .input-approve {
     width: 833px;
     height: 33px;
     border-radius: 5px;
 }
 
-.input-container {
+.container-approve .input-container {
     display: flex;
     align-items: center;
     
 }
 
-.unit {
+.container-approve .unit {
     margin-left: 8px;
 }
 
 /* CSS สำหรับปุ่มแก้ไข */
-.edit-button {
+.container-approve .edit-button {
     background-color: #D9D9D9; /* สีเทา */
     color: black; /* สีตัวอักษรเป็นสีดำ */
     padding: 10px 20px;
@@ -52,12 +52,12 @@
     height: 40px; 
 }
 
-.edit-button:hover {
+.container-approve .edit-button:hover {
     background-color: #bfbfbf; /* สีเข้มขึ้นเล็กน้อยเมื่อเอาเมาส์ไปวาง */
 }
 
 /* CSS สำหรับปุ่มยืนยัน */
-.save-button {
+.container-approve .save-button {
     background-color: #03D069; /* สีเขียว */
     color: white; /* สีตัวอักษรเป็นสีขาว */
     padding: 10px 20px;
@@ -69,18 +69,23 @@
     height: 40px;
 }
 
-.save-button:hover {
+.container-approve .save-button:hover {
     background-color: #02b85c; /* สีเข้มขึ้นเล็กน้อยเมื่อเอาเมาส์ไปวาง */
 }
 
 
-.box-approve {
+.container-approve .box-approve {
     display: flex;
     align-items: center;
     margin-left: 1rem;
 
 }
 
-.button-container {
+.container-approve .button-container {
     margin-left: 1rem;  
+}
+
+.container-approve button{
+    width: 90px;
+    height: auto;
 }

@@ -41,3 +41,14 @@
   line-height: 25px;
   font-weight: bold;
 }
+
+.provider-container button{
+  border-radius: 10px;
+}
+
+.provider-container .pagination {
+  display: flex;
+  flex-wrap: wrap; /* ปรับให้ Pagination ซ้อนกันได้ */
+  justify-content: center;
+  margin-top: 20px;
+}
