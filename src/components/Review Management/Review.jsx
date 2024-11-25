@@ -54,7 +54,7 @@ function Review() {
               ></td>
               <td className="text-center align-middle">
                 <button
-                  className="btn btn-outline-primary"
+                  className="btn btn-outline-dark"
                   onClick={() => navigate("CheckDriver")}
                 >
                   ตรวจสอบ

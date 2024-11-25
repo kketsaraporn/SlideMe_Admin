@@ -42,7 +42,6 @@ function Forgot() {
               placeholder="อีเมล"
               value={email}
               onChange={(e) => setEmail(e.target.value.trim())}
-              style={{borderRadius: "5px"}}
             />
           </div>
 

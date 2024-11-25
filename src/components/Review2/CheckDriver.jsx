@@ -28,7 +28,7 @@ function CheckDriver() {
   };
 
   return (
-    <div className="review-container">
+    <div className="checkdriver-container">
       <div className="flex items-center w-full justify-between">
         <h1 className="fs-3 font-bold">Check Driver's Review</h1>
         <i
