@@ -8,7 +8,7 @@
     align-items: center;
   }
   
-  .login-box {
+  .login-container .login-box {
     background-color: white;
     padding: 50px; 
     border-radius: 20px;
@@ -17,43 +17,43 @@
     max-width: 90%; 
   }
   
-  .login-detail {
+  .login-container .login-detail {
     color: #202224;
     font-weight: bold;
   }
  
-  .login-header .logo {
+  .login-container .login-header .logo {
     width: 250px; 
     height: 150px; 
     margin: auto;
   }
   
-  .login-header h3 {
+  .login-container .login-header h3 {
     color: #28a745; 
     font-size: 28px; 
     font-weight: bold;
     margin-top: 20px;
   }
   
-  .login-header p {
+  .login-container .login-header p {
     color: #6c757d;
     font-size: 16px;
     margin-bottom: 30px;
   }
   
   /* ปรับ input box */
-  .form-control {
+  .login-container .form-control {
     border-radius: 15px; 
     padding: 15px; 
     font-size: 16px; 
   }
   
-  .form-check-label {
+  .login-container .form-check-label {
     font-size: 14px; 
     color: #6c757d;
   }
   
-  .btn-success {
+  .login-container .btn-success {
     background-color: #28a745;
     border: none;
     border-radius: 15px;
@@ -63,11 +63,11 @@
     transition: 0.5s;
   }
   
-  .btn-success:hover {
+  .login-container .btn-success:hover {
     background-color: #218838; 
   }
   
-  .btn-dark {
+  .login-container .btn-dark {
     background-color: #3a3a3a;
     border: none;
     border-radius: 15px; 
@@ -77,18 +77,18 @@
     transition: 0.5s;
   }
   
-  .btn-dark:hover {
+  .login-container .btn-dark:hover {
     background-color: #1d1d1d; 
   }
   
-  .forgot-password-link {
+  .login-container .forgot-password-link {
     font-size: 14px; 
     color: #6c757d;
     text-decoration: none;
     margin-top: 20px;
   }
   
-  .forgot-password-link:hover {
+  .login-container .forgot-password-link:hover {
     text-decoration: underline;
   }
   

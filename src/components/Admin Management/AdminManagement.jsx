@@ -65,6 +65,7 @@ const AdminManagement = () => {
               placeholder="นามสกุล"
               value={formData.lastName}
               onChange={handleInputChange}
+              style={{ marginLeft: "10px" }}
             />
           </div>
           <div className="form-row">
@@ -74,6 +75,7 @@ const AdminManagement = () => {
               placeholder="เบอร์โทร"
               value={formData.phone}
               onChange={handleInputChange}
+              style={{ width: "50%" }}
             />
             <input
               type="email"
@@ -81,6 +83,7 @@ const AdminManagement = () => {
               placeholder="อีเมล"
               value={formData.email}
               onChange={handleInputChange}
+              style={{ width: "50%", marginLeft: "10px", marginTop: "5px" }}
             />
           </div>
           <div className="form-row">
@@ -90,6 +93,7 @@ const AdminManagement = () => {
               placeholder="รหัสผ่าน"
               value={formData.password}
               onChange={handleInputChange}
+              style={{ width: "50%" }}
             />
             <input
               type="password"
@@ -97,6 +101,7 @@ const AdminManagement = () => {
               placeholder="ยืนยันรหัสผ่าน"
               value={formData.confirmPassword}
               onChange={handleInputChange}
+              style={{ width: "50%", marginLeft: "10px" }}
             />
           </div>
           <div className="button-row">
