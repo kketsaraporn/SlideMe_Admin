@@ -15,18 +15,18 @@
     border: 2px solid #66bb6a;
   }
   
-  .form-group {
+  .edit-about-us-management .form-group {
     margin-bottom: 15px;
   }
   
-  .form-check label {
+  .edit-about-us-management .form-check label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     
   }
   
-  input[type="text"], textarea {
+  .edit-about-us-management .form-group input[type="text"], textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -34,7 +34,7 @@
     border-radius: 4px;
   }
   
-  input[type="file"] {
+  .edit-about-us-management .form-group input[type="file"] {
     display: block;
     margin-bottom: 10px;
   }
