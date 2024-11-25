@@ -50,7 +50,7 @@ function EditTutorial({ tutoriales, onSave }) {
   };
 
   return (
-    <div className="edit-container">
+    <div className="edit2-container">
       <h1>Edit Tutorial Management</h1>
       <div className="edit-form-container">
         <h2>แก้ไขข้อมูลคู่มือ (ID: {id})</h2>

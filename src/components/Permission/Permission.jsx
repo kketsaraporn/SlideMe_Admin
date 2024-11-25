@@ -54,7 +54,7 @@ const Permission = () => {
   }; 
   
   return (
-    <div className="container">
+    <div className="per-container">
       <h1>Permission</h1>
 
       <div className="permission-grid">

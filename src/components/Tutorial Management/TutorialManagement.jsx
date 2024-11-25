@@ -63,7 +63,7 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
   };
 
   return (
-    <div className="container">
+    <div className="tu-container">
       <h1>Tutorial Management</h1>
 
       <div className="form-container">
