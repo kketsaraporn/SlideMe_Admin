@@ -33,7 +33,11 @@ import ProviderDetail from "./components/ProviderManagement/ProviderDetail/provi
 import User from "./components/UserManagement/User";
 import EditUser from "./components/UserManagement/EditUser/editUser";
 import UserDetail from "./components/UserManagement/UserDetail/userDetail";
-import VehicleManagement from "./components/vehiclemanage/vehiclemanage";
+import VehicleManagement from "./components/VehicleManagement/vehiclemanage";
+import EditVehicle from "./components/VehicleManagement/editvehicle/editvehicle";
+import TutorialManagement from "./components/Tutorial Management/TutorialManagement";
+import EditTutorial from "./components/Tutorial Management/edittutorial/edittutorial";
+
 
 
 
@@ -41,6 +45,8 @@ function App() {
 
   const [statuses,setStatuses] = useState([]);
   const [vehicleTypes, setVehicleTypes] = useState([]);
+  const [tutoriales, setTutoriales] = useState([]);
+
 
   const [token, setToken] = useState(() => {
     return localStorage.getItem("token") || "";
@@ -76,6 +82,14 @@ function App() {
     setVehicleTypes(vehicleTypes.map(type => 
       type.id === editedVehicle.id
         ? editedVehicle
+        : type
+    ));
+  };
+
+  const handleSaveEditTutorial = (editedTutorial) => {
+    setTutoriales(tutoriales.map(type => 
+      type.id === editedTutorial.id
+        ? editedTutorial
         : type
     ));
   };
@@ -124,7 +138,8 @@ function App() {
 
           <Route path="/distancemanagement" element={<DistanceManagement />} />
 
-          <Route path="/" element={<VehicleManagement vehicleTypes={vehicleTypes} setVehicleTypes={setVehicleTypes} />} />
+          <Route path="/vehiclemanage" element={<VehicleManagement vehicleTypes={vehicleTypes} setVehicleTypes={setVehicleTypes} />} />
+          <Route path="/edit/:id" element={<EditVehicle vehicleTypes={vehicleTypes} onSave={handleSaveEdit} />} />
 
           <Route path="/pricemanagement" element={<PriceManagement />} />
           <Route path="/edit-price/:id" element={<EditPrice />} />
@@ -145,12 +160,15 @@ function App() {
           <Route path="/details/:id" element={<Details />} />
 
           <Route path="/userManagement" element={<User />} />
-            <Route path="/edituser/:userId" element={<EditUser />} />
-            <Route path="/userdetail/:userId" element={<UserDetail />} />
+          <Route path="/edituser/:userId" element={<EditUser />} />
+          <Route path="/userdetail/:userId" element={<UserDetail />} />
           
           <Route path="/providerManagement" element={<Provider />} /> 
           <Route path="/editprovider/:providerId" element={<EditProvider />} />
           <Route path="/providerdetail/:providerId" element={<ProviderDetail />} />
+
+          <Route path="/tutorialmanagement" element={<TutorialManagement tutoriales={tutoriales} setTutoriales={setTutoriales} />} />
+          <Route path="/edit/:id" element={<EditTutorial tutoriales={tutoriales} onSave={handleSaveEdit} />} />
 
         </Route>
 

@@ -26,6 +26,11 @@ const AdminManagement = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    Swal.fire({
+      title: "บันทึกข้อมูลสำเร็จ!",
+      text: "ข้อมูลถูกบันทึก",
+      icon: "success"
+    });
     console.log("Form submitted:", formData);
   };
 

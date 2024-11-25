@@ -101,10 +101,10 @@ function BannerManagement() {
             <h2>Banner Management</h2>
             <div className="banner-card"  
             style={{
-                backgroundImage: preview ? `url(${preview})` : "none", // ใช้รูปภาพเป็นพื้นหลัง
-                backgroundColor: !preview ? "green" : "transparent", // กรณีไม่มีภาพ ใช้พื้นหลังสีเขียว
-                backgroundSize: "cover", // ให้ภาพขยายเต็มพื้นที่
-                backgroundPosition: "center", // จัดตำแหน่งกลาง
+                backgroundImage: preview ? `url(${preview})` : "none", 
+                backgroundColor: !preview ? "green" : "transparent", 
+                backgroundSize: "cover", 
+                backgroundPosition: "center", 
             }}>
                 <div className="banner-content">
                     <h3>September 12-22</h3>
@@ -125,7 +125,7 @@ function BannerManagement() {
                             type="file"
                             accept="image/*"
                             onChange={handleFileChange}
-                            style={{ display: "none" }} // ซ่อน input file
+                            style={{ display: "none" }} 
                         />
                     </label>
 
