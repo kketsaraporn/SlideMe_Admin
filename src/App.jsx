@@ -11,7 +11,7 @@ import AccountStatus from "./components/Account Status/AccountStatus";
 import AdminAccout from "./components/Admin Account Management/AdminAccout";
 import Login from "./components/Login/Login";
 import Forgot from "./components/Login/Forgotpassword/Forgot";
-import CheckDriver from "./components/Check Driver Reviews/CheckDriver";
+import CheckDriver from "./components/Review2/CheckDriver";
 import Checkorder from "./components/Checkorder/Checkorder";
 import Layout from "./Layout/layout/Layout";
 
@@ -28,11 +28,19 @@ import ApproveProvider from "./components/Approve provider/ApproveProvider";
 import EditStatus from "./components/Account Status/editstatus/editstatus";
 import DistanceManagement from "./components/Distance Management/DistanceManagement.JSX";
 import Details from "./components/Approve Provider/Details";
+import EditProvider from "./components/ProviderManagement/EditProvider/editProvider";
+import ProviderDetail from "./components/ProviderManagement/ProviderDetail/providerDetail";
+import User from "./components/UserManagement/User";
+import EditUser from "./components/UserManagement/EditUser/editUser";
+import UserDetail from "./components/UserManagement/UserDetail/userDetail";
+import VehicleManagement from "./components/vehiclemanage/vehiclemanage";
+
 
 
 function App() {
 
   const [statuses,setStatuses] = useState([]);
+  const [vehicleTypes, setVehicleTypes] = useState([]);
 
   const [token, setToken] = useState(() => {
     return localStorage.getItem("token") || "";
@@ -59,6 +67,15 @@ function App() {
     setStatuses(statuses.map(type => 
       type.id === editedStatus.id
         ? editedStatus
+        : type
+    ));
+  };
+
+  // ฟังก์ชันบันทึกข้อมูลที่แก้ไขในหน้า EditVehicle
+  const handleSaveEditVehicle = (editedVehicle) => {
+    setVehicleTypes(vehicleTypes.map(type => 
+      type.id === editedVehicle.id
+        ? editedVehicle
         : type
     ));
   };
@@ -107,6 +124,8 @@ function App() {
 
           <Route path="/distancemanagement" element={<DistanceManagement />} />
 
+          <Route path="/" element={<VehicleManagement vehicleTypes={vehicleTypes} setVehicleTypes={setVehicleTypes} />} />
+
           <Route path="/pricemanagement" element={<PriceManagement />} />
           <Route path="/edit-price/:id" element={<EditPrice />} />
 
@@ -124,7 +143,15 @@ function App() {
 
           <Route path="/approveprovider" element={<ApproveProvider />} />
           <Route path="/details/:id" element={<Details />} />
+
+          <Route path="/userManagement" element={<User />} />
+            <Route path="/edituser/:userId" element={<EditUser />} />
+            <Route path="/userdetail/:userId" element={<UserDetail />} />
           
+          <Route path="/providerManagement" element={<Provider />} /> 
+          <Route path="/editprovider/:providerId" element={<EditProvider />} />
+          <Route path="/providerdetail/:providerId" element={<ProviderDetail />} />
+
         </Route>
 
         {/* Catch all route */}
