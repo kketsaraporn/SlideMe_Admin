@@ -145,7 +145,7 @@ function Dashboard() {
                                   : dataa == 4
                                   ? overallData[1].thisYear.toLocaleString()
                                   : null}
-                                <span className="ml-2">ออเดอร์</span>
+                                <span className="ml-2 md:text-[1.2rem] mr-6">รายการ</span>
                               </p>
                               <span>
                                 <i className="bi bi-receipt fs-2"></i>
@@ -304,7 +304,7 @@ function Dashboard() {
 
                   </div>
 
-                  <div className="col-xl-3 col-xxl-4 col-lg-6">
+                  <div className="col-xl-3 col-xxl-4 col-lg-6 col-md-8 col-sm-12">
                     <div className="card shadow mb-4">
                       <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 className="m-0 font-weight-bold text-primary">
@@ -331,7 +331,7 @@ function Dashboard() {
                     </div>
                   </div>
 
-                  <div className="col-xl-3 col-xxl-4 col-lg-6">
+                  <div className="col-xl-2 col-xxl-4 col-lg-6">
                     <div className="card shadow mb-4">
                       <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 className="m-0 font-weight-bold text-primary">
@@ -344,7 +344,7 @@ function Dashboard() {
                     </div>
                   </div>
 
-                  <div className="col-xl-5 col-xxl-6 col-lg-6">
+                  <div className="col-xl-5 col-xxl-6 col-lg-1">
                     <div className="card shadow mb-4">
                       <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 className="m-0 font-weight-bold text-primary">
