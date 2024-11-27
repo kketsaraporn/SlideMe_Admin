@@ -10,7 +10,7 @@
   max-width: 95%; /* จำกัดความกว้างสูงสุด */
 }
 
-.form-group {
+.editUser-container .form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -19,7 +19,7 @@
   text-align: left;
 }
 
-input {
+.editUser-container input {
   width: 100%; /* ใช้ 100% เพื่อให้ตอบสนองกับ container */
   max-width: 1320px; /* จำกัดความกว้างสูงสุด */
   height: 36px;
@@ -29,7 +29,7 @@ input {
   padding: 0.5rem;
 }
 
-label {
+.editUser-container label {
   font-size: 18px;
   font-weight: bold;
 }
@@ -40,11 +40,11 @@ label {
     padding: 0.5rem;
   }
 
-  label {
+  .editUser-container label {
     font-size: 16px; /* ลดขนาดฟอนต์ */
   }
 
-  input {
+  .editUser-container input {
     height: 32px; /* ลดความสูง */
   }
 }
@@ -55,11 +55,11 @@ label {
     border-width: 2px; /* ลดความหนาของ border */
   }
 
-  label {
+  .editUser-container label {
     font-size: 14px; /* ลดขนาดฟอนต์เพิ่มเติม */
   }
 
-  input {
+  .editUser-container input {
     height: 28px; /* ลดความสูงเพิ่ม */
     padding: 0.4rem; /* ลด padding */
   }

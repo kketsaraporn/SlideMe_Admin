@@ -11,7 +11,7 @@
   font-family: "Prompt", sans-serif;
 }
 
-.user-detail-content {
+.user-detail-container .user-detail-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;

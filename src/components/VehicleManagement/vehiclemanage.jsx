@@ -59,7 +59,7 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
   };
 
   return (
-    <div className="container">
+    <div className="vehi-container">
       <h1>Vehicle Type Management</h1>
 
       <div className="form-container">
