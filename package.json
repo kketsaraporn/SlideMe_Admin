@@ -2,9 +2,11 @@
   "name": "project205",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://kketsaraporn.github.io/SlideMe-Admin-1/",
+  "homepage": "https://kketsaraporn.github.io/SlideMeAdmin/",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
