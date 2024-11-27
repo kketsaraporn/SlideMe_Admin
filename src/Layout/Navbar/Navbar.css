@@ -9,7 +9,7 @@
     flex-direction: column;
     padding: 20px;
     transition: 0.5s;
-    min-height: 140vh;
+    min-height: 145vh;
 }
 
 .sidebar.toggle {

@@ -7,7 +7,7 @@
     color: #333;
   } */
   
-  .form-container {
+  .admin-management-container .form-container {
     border: 2px solid #28a745; /* Green border */
     padding: 20px;
     margin-bottom: 20px;
@@ -15,29 +15,29 @@
     background-color: #f9f9f9;
   }
   
-  .form-container h3 {
+  .admin-management-container .form-container h3 {
     margin-bottom: 15px;
   }
   
-  .form-container .form-row {
+  .admin-management-container .form-container .form-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
   }
   
-  .form-row input {
+  .admin-management-container .form-row input {
     width: 48%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  .button-row {
+  .admin-management-container .button-row {
     display: flex;
     gap: 1.5rem;
   }
   
-  .save-button, .cancel-button {
+  .admin-management-container .save-button, .cancel-button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -45,12 +45,12 @@
     font-size: 16px;
   }
   
-  .save-button {
+  .admin-management-container .save-button {
     background-color: #28a745;
     color: white;
   }
   
-  .cancel-button {
+  .admin-management-container .cancel-button {
     background-color: #333;
     color: white;
   }
@@ -85,10 +85,10 @@
     cursor: pointer;
   } */
   
-/*   .edit-button {
+  .admin-list-container .edit-button {
     background-color: #6c757d;
     color: white;
-  } */
+  }
   
 /*   .delete-button {
     background-color: #333;

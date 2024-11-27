@@ -45,7 +45,7 @@ const EditAdminAccount = () => {
   };
 
   return (
-    <div className="edit-admin-container">
+    <div className="admin-management-container">
       <h2>Edit Admin Account </h2>
       <div className="form-container">
       <h6>แก้ไขบัญชี Admin ID: {id}</h6>
