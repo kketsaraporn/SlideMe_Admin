@@ -68,155 +68,121 @@ function Dashboard() {
 
   return (
     <div>
+      <div id="wrapper">
+        <div id="content-wrapper" className="d-flex flex-column bg-white">
+          <div id="content">
+            <div className="container-fluid">
+              <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 className="font-medium fs-3 mb-0 text-gray-800">
+                  Dashboard
+                </h1>
+                <select
+                  ref={dataType}
+                  onChange={() => setData(dataType.current.value)}
+                  className="form-select max-w-sm"
+                >
+                  <option value="1">ข้อมูลของวันนี้</option>
+                  <option value="2">ข้อมูลของสัปดาห์นี้</option>
+                  <option value="3">ข้อมูลของเดือนนี้</option>
+                  <option value="4">ข้อมูลของปีนี้</option>
+                </select>
+              </div>
 
-        <div id="wrapper">
-          <div id="content-wrapper" className="d-flex flex-column bg-white">
-            <div id="content">
-              <div className="container-fluid">
-      
-                <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                  <h1 className="font-medium fs-3 mb-0 text-gray-800">Dashboard</h1>
-                  <select
-                    ref={dataType}
-                    onChange={() => setData(dataType.current.value)}
-                    className="form-select max-w-sm"
-                  >
-                    <option value="1">ข้อมูลของวันนี้</option>
-                    <option value="2">ข้อมูลของสัปดาห์นี้</option>
-                    <option value="3">ข้อมูลของเดือนนี้</option>
-                    <option value="4">ข้อมูลของปีนี้</option>
-                  </select>
+              <div className="row">
+                <div className="col-xl-6 col-md-6 mb-4 box">
+                  <div className="card shadow h-100 p-2  second">
+                    <div className="card-body">
+                      <div className="row no-gutters align-items-center">
+                        <div className="col mr-2 mt-2">
+                          <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            <p className="font-bold text-[15px] text">
+                              จำนวนผู้ให้บริการ
+                            </p>
+                          </div>
+                          <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
+                            <p className="text-3xl mt-1">
+                              {dataa == 1
+                                ? overallData[0].today.toLocaleString()
+                                : dataa == 2
+                                ? overallData[0].thisWeek.toLocaleString()
+                                : dataa == 3
+                                ? overallData[0].thisMonth.toLocaleString()
+                                : dataa == 4
+                                ? overallData[0].thisYear.toLocaleString()
+                                : null}
+                              <span className="ml-2">คน</span>
+                            </p>
+                            <span>
+                              <i className="bi bi-person-circle fs-2"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="row">
-
-                  <div className="col-xl-3 col-md-6 mb-4 box">
-                    <div className="card shadow h-100 p-2  second">
-                      <div className="card-body">
-                        <div className="row no-gutters align-items-center">
-                          <div className="col mr-2 mt-2">
-                            <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                              <p className="font-bold text-[15px] text">
-                                จำนวนผู้ให้บริการ
-                              </p>
-                            </div>
-                            <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
-                              <p className="text-3xl mt-1">
-                              {
-                                dataa == 1 ? overallData[0].today.toLocaleString()
-                                : 
-                                dataa == 2 ? overallData[0].thisWeek.toLocaleString()
-                                : 
-                                dataa == 3 ? overallData[0].thisMonth.toLocaleString()
-                                : 
-                                dataa == 4 ? overallData[0].thisYear.toLocaleString()
-                                : null
-                              }
-                                <span className="ml-2">คน</span>
-                              </p>
-                              <span>
-                                <i className="bi bi-person-circle fs-2"></i>
+                <div className="col-xl-6 col-md-6 mb-4 box">
+                  <div className="card border-left-success shadow h-100 p-2 second">
+                    <div className="card-body">
+                      <div className="row no-gutters align-items-center">
+                        <div className="col mr-2 mt-2">
+                          <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            <p className="font-bold text-[15px] text">
+                              จำนวน Order
+                            </p>
+                          </div>
+                          <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
+                            <p className="text-3xl mt-1">
+                              {dataa == 1
+                                ? overallData[1].today.toLocaleString()
+                                : dataa == 2
+                                ? overallData[1].thisWeek.toLocaleString()
+                                : dataa == 3
+                                ? overallData[1].thisMonth.toLocaleString()
+                                : dataa == 4
+                                ? overallData[1].thisYear.toLocaleString()
+                                : null}
+                              <span className="ml-2 md:text-[1.2rem] mr-6">
+                                ออเดอร์
                               </span>
-                            </div>
+                            </p>
+                            <span>
+                              <i className="bi bi-receipt fs-2"></i>
+                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="col-xl-3 col-md-6 mb-4 box">
-                    <div className="card border-left-success shadow h-100 p-2 second">
-                      <div className="card-body">
-                        <div className="row no-gutters align-items-center">
-                          <div className="col mr-2 mt-2">
-                            <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
-                              <p className="font-bold text-[15px] text">
-                                จำนวน Order
-                              </p>
-                            </div>
+                <div className="col-xl-6 col-md-6 mb-4 box">
+                  <div className="card border-left-info shadow h-100 p-2 second">
+                    <div className="card-body">
+                      <div className="row no-gutters align-items-center">
+                        <div className="col mr-2 mt-2">
+                          <div className="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            <p className="font-bold text-[15px] text">
+                              จำนวนรถ
+                            </p>
+                          </div>
+                          <div className="row no-gutters align-items-center">
                             <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
                               <p className="text-3xl mt-1">
                                 {dataa == 1
-                                  ? overallData[1].today.toLocaleString()
+                                  ? overallData[2].today.toLocaleString()
                                   : dataa == 2
-                                  ? overallData[1].thisWeek.toLocaleString()
+                                  ? overallData[2].thisWeek.toLocaleString()
                                   : dataa == 3
-                                  ? overallData[1].thisMonth.toLocaleString()
+                                  ? overallData[2].thisMonth.toLocaleString()
                                   : dataa == 4
-                                  ? overallData[1].thisYear.toLocaleString()
+                                  ? overallData[2].thisYear.toLocaleString()
                                   : null}
-                                <span className="ml-2 md:text-[1.2rem] mr-6">รายการ</span>
+                                <span className="ml-2">คัน</span>
                               </p>
                               <span>
-                                <i className="bi bi-receipt fs-2"></i>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-xl-3 col-md-6 mb-4 box">
-                    <div className="card border-left-info shadow h-100 p-2 second">
-                      <div className="card-body">
-                        <div className="row no-gutters align-items-center">
-                          <div className="col mr-2 mt-2">
-                            <div className="text-xs font-weight-bold text-info text-uppercase mb-1">
-                              <p className="font-bold text-[15px] text">
-                                จำนวนรถ
-                              </p>
-                            </div>
-                            <div className="row no-gutters align-items-center">
-                              <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
-                                <p className="text-3xl mt-1">
-                                  {dataa == 1
-                                    ? overallData[2].today.toLocaleString()
-                                    : dataa == 2
-                                    ? overallData[2].thisWeek.toLocaleString()
-                                    : dataa == 3
-                                    ? overallData[2].thisMonth.toLocaleString()
-                                    : dataa == 4
-                                    ? overallData[2].thisYear.toLocaleString()
-                                    : null}
-                                  <span className="ml-2">คัน</span>
-                                </p>
-                                <span>
-                                  <i className="bi bi-truck fs-2"></i>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-xl-3 col-md-6 mb-4 box">
-                    <div className="card border-left-warning shadow h-100 p-2 second">
-                      <div className="card-body">
-                        <div className="row no-gutters align-items-center">
-                          <div className="col mr-2 mt-2">
-                            <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                              <p className="font-bold text-[15px] text">
-                                จำนวนผู้ใช้บริการทั้งหมด
-                              </p>
-                            </div>
-                            <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
-                              <p className="text-3xl mt-1">
-                                {dataa == 1
-                                  ? overallData[3].today.toLocaleString()
-                                  : dataa == 2
-                                  ? overallData[3].thisWeek.toLocaleString()
-                                  : dataa == 3
-                                  ? overallData[3].thisMonth.toLocaleString()
-                                  : dataa == 4
-                                  ? overallData[3].thisYear.toLocaleString()
-                                  : null}
-                                <span className="ml-2">คน</span>
-                              </p>
-                              <span>
-                                <i className="bi bi-people-fill fs-2"></i>
+                                <i className="bi bi-truck fs-2"></i>
                               </span>
                             </div>
                           </div>
@@ -226,142 +192,165 @@ function Dashboard() {
                   </div>
                 </div>
 
-                <div className="row">
-                  
-                  <div className="d-flex p-[2rem] pb-[3.5rem]">
-
-                    <div className="bg-blue-400 rounded-xl text-white w-[30%]">
-                      <div className="d-flex p-5 justify-between items-center">
-                        <div>
-                          <h1>รายรับ</h1>
-                          <h4>
-                            {dataa == 1
-                              ? money[0].today.toLocaleString()
-                              : dataa == 2
-                              ? money[0].thisWeek.toLocaleString()
-                              : dataa == 3
-                              ? money[0].thisMonth.toLocaleString()
-                              : dataa == 4
-                              ? money[0].thisYear.toLocaleString()
-                              : null}{" "}
-                             บาท
-                          </h4>
+                <div className="col-xl-6 col-md-6 mb-4 box">
+                  <div className="card border-left-warning shadow h-100 p-2 second">
+                    <div className="card-body">
+                      <div className="row no-gutters align-items-center">
+                        <div className="col mr-2 mt-2">
+                          <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            <p className="font-bold text-[15px] text">
+                              จำนวนผู้ใช้บริการทั้งหมด
+                            </p>
+                          </div>
+                          <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
+                            <p className="text-3xl mt-1">
+                              {dataa == 1
+                                ? overallData[3].today.toLocaleString()
+                                : dataa == 2
+                                ? overallData[3].thisWeek.toLocaleString()
+                                : dataa == 3
+                                ? overallData[3].thisMonth.toLocaleString()
+                                : dataa == 4
+                                ? overallData[3].thisYear.toLocaleString()
+                                : null}
+                              <span className="ml-2">คน</span>
+                            </p>
+                            <span>
+                              <i className="bi bi-people-fill fs-2"></i>
+                            </span>
+                          </div>
                         </div>
-                        <div className="ms-4">
-                          <i className="bi bi-cash-coin fs-2"></i>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="ml-10 bg-green-400 rounded-xl text-white w-[30%]">
-                      <div className="d-flex p-5 justify-between items-center">
-                        <div>
-                          <h1>กำไร</h1>
-                          <h4>
-                            {dataa == 1
-                              ? money[1].today.toLocaleString()
-                              : dataa == 2
-                              ? money[1].thisWeek.toLocaleString()
-                              : dataa == 3
-                              ? money[1].thisMonth.toLocaleString()
-                              : dataa == 4
-                              ? money[1].thisYear.toLocaleString()
-                              : null}{" "}
-                            บาท
-                          </h4>
-                        </div>
-                        <div className="ms-4">
-                          <i className="bi bi-graph-up fs-2"></i>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="ml-10 bg-red-400 rounded-xl text-white  w-[30%]">
-                      <div className="d-flex p-5 justify-between items-center">
-
-                        <div>
-                          <h1 className="text-nowrap">รายจ่าย</h1>
-                          <h4>
-                            {dataa == 1
-                              ? money[2].today.toLocaleString()
-                              : dataa == 2
-                              ? money[2].thisWeek.toLocaleString()
-                              : dataa == 3
-                              ? money[2].thisMonth.toLocaleString()
-                              : dataa == 4
-                              ? money[2].thisYear.toLocaleString()
-                              : null}{" "}
-                            บาท
-                          </h4>
-                        </div>
-
-                        <div className="ms-4">
-                          <i className="bi bi-graph-down-arrow fs-2"></i>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div className="col-xl-3 col-xxl-4 col-lg-6 col-md-8 col-sm-12">
-                    <div className="card shadow mb-4">
-                      <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 className="m-0 font-weight-bold text-primary">
-                          
-                        </h6>
-                      </div>
-
-                      <div className="card-body">
-                        <Chart dataa={dataa} />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-xl-3 col-xxl-4 col-lg-6">
-                    <div className="card shadow mb-4">
-                      <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 className="m-0 font-weight-bold text-primary text-1xl">
-                    
-                        </h6>
-                      </div>
-                      <div className="card-body">
-                        <Donut dataa={dataa} />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-xl-2 col-xxl-4 col-lg-6">
-                    <div className="card shadow mb-4">
-                      <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 className="m-0 font-weight-bold text-primary">
-                      
-                        </h6>
-                      </div>
-                      <div className="card-body">
-                        <Barchart dataa={dataa} />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-xl-5 col-xxl-6 col-lg-1">
-                    <div className="card shadow mb-4">
-                      <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 className="m-0 font-weight-bold text-primary">
-                     
-                        </h6>
-                      </div>
-                      <div className="card-body">
-                        <Map dataa={dataa} />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <div className="row">
+                <div className="d-flex p-[2rem] pb-[3.5rem]">
+                  <div className="bg-blue-400 rounded-xl text-white w-[30%]">
+                    <div className="d-flex p-5 justify-between items-center">
+                      <div>
+                        <h1>รายรับ</h1>
+                        <h4>
+                          {dataa == 1
+                            ? money[0].today.toLocaleString()
+                            : dataa == 2
+                            ? money[0].thisWeek.toLocaleString()
+                            : dataa == 3
+                            ? money[0].thisMonth.toLocaleString()
+                            : dataa == 4
+                            ? money[0].thisYear.toLocaleString()
+                            : null}{" "}
+                          บาท
+                        </h4>
+                      </div>
+                      <div className="ms-4">
+                        <i className="bi bi-cash-coin fs-2"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="ml-10 bg-green-400 rounded-xl text-white w-[30%]">
+                    <div className="d-flex p-5 justify-between items-center">
+                      <div>
+                        <h1>กำไร</h1>
+                        <h4>
+                          {dataa == 1
+                            ? money[1].today.toLocaleString()
+                            : dataa == 2
+                            ? money[1].thisWeek.toLocaleString()
+                            : dataa == 3
+                            ? money[1].thisMonth.toLocaleString()
+                            : dataa == 4
+                            ? money[1].thisYear.toLocaleString()
+                            : null}{" "}
+                          บาท
+                        </h4>
+                      </div>
+                      <div className="ms-4">
+                        <i className="bi bi-graph-up fs-2"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="ml-10 bg-red-400 rounded-xl text-white  w-[30%]">
+                    <div className="d-flex p-5 justify-between items-center">
+                      <div>
+                        <h1 className="text-nowrap">รายจ่าย</h1>
+                        <h4>
+                          {dataa == 1
+                            ? money[2].today.toLocaleString()
+                            : dataa == 2
+                            ? money[2].thisWeek.toLocaleString()
+                            : dataa == 3
+                            ? money[2].thisMonth.toLocaleString()
+                            : dataa == 4
+                            ? money[2].thisYear.toLocaleString()
+                            : null}{" "}
+                          บาท
+                        </h4>
+                      </div>
+
+                      <div className="ms-4">
+                        <i className="bi bi-graph-down-arrow fs-2"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-6 col-lg-4 col-xl-6">
+
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between"></div>
+                    <div className="card-body">
+                      <Chart dataa={dataa} />
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Card 2 */}
+                <div className="col-12 col-md-6 col-lg-4 col-xl-6">
+
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between"></div>
+                    <div className="card-body">
+                      <Donut dataa={dataa} />
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Card 3 */}
+                <div className="col-12 col-md-6 col-lg-4 col-xl-6">
+
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between"></div>
+                    <div className="card-body">
+                      <Barchart dataa={dataa} />
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Card 4 */}
+                <div className="col-12 col-md-6 col-lg-12 col-xl-6">
+
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between"></div>
+                    <div className="card-body">
+                      <Map dataa={dataa} />
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
-     
+      </div>
     </div>
   );
 }
