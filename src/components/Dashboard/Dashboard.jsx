@@ -9,29 +9,6 @@ function Dashboard() {
   const [dataa, setData] = useState("");
   const dataType = useRef();
 
-  const money = [
-    {
-      id: 1,
-      today: 98000,
-      thisWeek: 686000,
-      thisMonth: 2940000,
-      thisYear: 35280000,
-    },
-    {
-      id: 2,
-      today: 98000 - 15000,
-      thisWeek: 686000 - 15000 * 7,
-      thisMonth: 2940000 - 15000 * 30,
-      thisYear: 35280000 - 15000 * 360,
-    },
-    {
-      id: 3,
-      today: 15000,
-      thisWeek: 15000 * 7,
-      thisMonth: 15000 * 30,
-      thisYear: 15000 * 360,
-    },
-  ];
   const overallData = [
     {
       id: 1,
@@ -61,7 +38,39 @@ function Dashboard() {
       thisMonth: 353020,
       thisYear: 4287600,
     },
+    {
+      id: 5,
+      today: 1120,
+      thisWeek: 10654,
+      thisMonth: 113020,
+      thisYear: 1287600,
+    },
   ];
+
+  const finance = [
+    {
+      id: 1,
+      today: 98000,
+      thisWeek: 686000,
+      thisMonth: 2940000,
+      thisYear: 35280000,
+    },
+    {
+      id: 2,
+      today: 98000 - 15000,
+      thisWeek: 686000 - 15000 * 7,
+      thisMonth: 2940000 - 15000 * 30,
+      thisYear: 35280000 - 15000 * 360,
+    },
+    {
+      id: 3,
+      today: 15000,
+      thisWeek: 15000 * 7,
+      thisMonth: 15000 * 30,
+      thisYear: 15000 * 360,
+    },
+  ];
+
   useEffect(() => {
     setData(dataType.current.value);
   });
@@ -199,19 +208,19 @@ function Dashboard() {
                         <div className="col mr-2 mt-2">
                           <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             <p className="font-bold text-[15px] text">
-                              จำนวนผู้ใช้บริการทั้งหมด
+                              จำนวนผู้ใช้งานใหม่
                             </p>
                           </div>
                           <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
                             <p className="text-3xl mt-1">
                               {dataa == 1
-                                ? overallData[3].today.toLocaleString()
+                                ? overallData[4].today.toLocaleString()
                                 : dataa == 2
-                                ? overallData[3].thisWeek.toLocaleString()
+                                ? overallData[4].thisWeek.toLocaleString()
                                 : dataa == 3
-                                ? overallData[3].thisMonth.toLocaleString()
+                                ? overallData[4].thisMonth.toLocaleString()
                                 : dataa == 4
-                                ? overallData[3].thisYear.toLocaleString()
+                                ? overallData[4].thisYear.toLocaleString()
                                 : null}
                               <span className="ml-2">คน</span>
                             </p>
@@ -268,13 +277,13 @@ function Dashboard() {
                         <h1>รายรับ</h1>
                         <h4>
                           {dataa == 1
-                            ? money[0].today.toLocaleString()
+                            ? finance[0].today.toLocaleString()
                             : dataa == 2
-                            ? money[0].thisWeek.toLocaleString()
+                            ? finance[0].thisWeek.toLocaleString()
                             : dataa == 3
-                            ? money[0].thisMonth.toLocaleString()
+                            ? finance[0].thisMonth.toLocaleString()
                             : dataa == 4
-                            ? money[0].thisYear.toLocaleString()
+                            ? finance[0].thisYear.toLocaleString()
                             : null}{" "}
                           บาท
                         </h4>
@@ -291,13 +300,13 @@ function Dashboard() {
                         <h1>กำไร</h1>
                         <h4>
                           {dataa == 1
-                            ? money[1].today.toLocaleString()
+                            ? finance[1].today.toLocaleString()
                             : dataa == 2
-                            ? money[1].thisWeek.toLocaleString()
+                            ? finance[1].thisWeek.toLocaleString()
                             : dataa == 3
-                            ? money[1].thisMonth.toLocaleString()
+                            ? finance[1].thisMonth.toLocaleString()
                             : dataa == 4
-                            ? money[1].thisYear.toLocaleString()
+                            ? finance[1].thisYear.toLocaleString()
                             : null}{" "}
                           บาท
                         </h4>
@@ -314,13 +323,13 @@ function Dashboard() {
                         <h1 className="text-nowrap">รายจ่าย</h1>
                         <h4>
                           {dataa == 1
-                            ? money[2].today.toLocaleString()
+                            ? finance[2].today.toLocaleString()
                             : dataa == 2
-                            ? money[2].thisWeek.toLocaleString()
+                            ? finance[2].thisWeek.toLocaleString()
                             : dataa == 3
-                            ? money[2].thisMonth.toLocaleString()
+                            ? finance[2].thisMonth.toLocaleString()
                             : dataa == 4
-                            ? money[2].thisYear.toLocaleString()
+                            ? finance[2].thisYear.toLocaleString()
                             : null}{" "}
                           บาท
                         </h4>
