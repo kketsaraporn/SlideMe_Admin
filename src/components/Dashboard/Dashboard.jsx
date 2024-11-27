@@ -89,7 +89,7 @@ function Dashboard() {
               </div>
 
               <div className="row">
-                <div className="col-xl-6 col-md-6 mb-4 box">
+                <div className="col-xl-4 col-md-6 mb-4 box">
                   <div className="card shadow h-100 p-2  second">
                     <div className="card-body">
                       <div className="row no-gutters align-items-center">
@@ -122,7 +122,7 @@ function Dashboard() {
                   </div>
                 </div>
 
-                <div className="col-xl-6 col-md-6 mb-4 box">
+                <div className="col-xl-4 col-md-6 mb-4 box">
                   <div className="card border-left-success shadow h-100 p-2 second">
                     <div className="card-body">
                       <div className="row no-gutters align-items-center">
@@ -143,7 +143,7 @@ function Dashboard() {
                                 : dataa == 4
                                 ? overallData[1].thisYear.toLocaleString()
                                 : null}
-                              <span className="ml-2 md:text-[1.2rem] mr-6">
+                              <span className="ml-2 mr-6">
                                 ออเดอร์
                               </span>
                             </p>
@@ -157,7 +157,7 @@ function Dashboard() {
                   </div>
                 </div>
 
-                <div className="col-xl-6 col-md-6 mb-4 box">
+                <div className="col-xl-4 col-md-6 mb-4 box">
                   <div className="card border-left-info shadow h-100 p-2 second">
                     <div className="card-body">
                       <div className="row no-gutters align-items-center">
@@ -192,7 +192,7 @@ function Dashboard() {
                   </div>
                 </div>
 
-                <div className="col-xl-6 col-md-6 mb-4 box">
+                <div className="col-xl- col-md-6 mb-4 box">
                   <div className="card border-left-warning shadow h-100 p-2 second">
                     <div className="card-body">
                       <div className="row no-gutters align-items-center">
@@ -224,6 +224,40 @@ function Dashboard() {
                     </div>
                   </div>
                 </div>
+
+                <div className="col-xl- col-md-6 mb-4 box">
+                  <div className="card border-left-warning shadow h-100 p-2 second">
+                    <div className="card-body">
+                      <div className="row no-gutters align-items-center">
+                        <div className="col mr-2 mt-2">
+                          <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            <p className="font-bold text-[15px] text">
+                              จำนวนผู้ใช้บริการทั้งหมด
+                            </p>
+                          </div>
+                          <div className="h5 mb-0 font-weight-bold d-flex justify-between align-middle text-gray-800 detail">
+                            <p className="text-3xl mt-1">
+                              {dataa == 1
+                                ? overallData[3].today.toLocaleString()
+                                : dataa == 2
+                                ? overallData[3].thisWeek.toLocaleString()
+                                : dataa == 3
+                                ? overallData[3].thisMonth.toLocaleString()
+                                : dataa == 4
+                                ? overallData[3].thisYear.toLocaleString()
+                                : null}
+                              <span className="ml-2">คน</span>
+                            </p>
+                            <span>
+                              <i className="bi bi-people-fill fs-2"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div className="row">
