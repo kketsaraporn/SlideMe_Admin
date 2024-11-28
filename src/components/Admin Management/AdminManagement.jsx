@@ -29,7 +29,7 @@ const AdminManagement = () => {
     Swal.fire({
       title: "บันทึกข้อมูลสำเร็จ!",
       text: "ข้อมูลถูกบันทึก",
-      icon: "success"
+      icon: "success",
     });
     console.log("Form submitted:", formData);
   };
@@ -81,7 +81,6 @@ const AdminManagement = () => {
               placeholder="อีเมล"
               value={formData.email}
               onChange={handleInputChange}
-          
             />
           </div>
           <div className="form-row">
@@ -91,7 +90,6 @@ const AdminManagement = () => {
               placeholder="รหัสผ่าน"
               value={formData.password}
               onChange={handleInputChange}
-            
             />
             <input
               type="password"
@@ -99,7 +97,6 @@ const AdminManagement = () => {
               placeholder="ยืนยันรหัสผ่าน"
               value={formData.confirmPassword}
               onChange={handleInputChange}
-          
             />
           </div>
           <div className="button-row">

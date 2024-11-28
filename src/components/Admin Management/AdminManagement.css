@@ -38,20 +38,19 @@
   }
   
   .admin-management-container .save-button, .cancel-button {
-    padding: 10px 20px;
+    padding: 8px 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
   }
   
   .admin-management-container .save-button {
-    background-color: #28a745;
+    background-color: #03D069;
     color: white;
   }
   
   .admin-management-container .cancel-button {
-    background-color: #333;
+    background-color: #000000;
     color: white;
   }
   

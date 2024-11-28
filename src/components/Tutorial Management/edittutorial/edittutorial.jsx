@@ -38,6 +38,7 @@ function EditTutorial({ tutoriales, onSave }) {
 
     onSave(editedTutorial);
     navigate('/tutorialmanagement'); // กลับไปหน้าหลักหลังจากบันทึก
+
   };
 
   // ฟังก์ชันสําหรับอัปโหลดรูปภาพ
@@ -77,7 +78,9 @@ function EditTutorial({ tutoriales, onSave }) {
         />
         <label>รูปภาพ</label>
         <input 
-          type="file" 
+           class="form-control"
+           type="file"
+           id="formFile" 
           onChange={handleFileChange} 
         />
         {imageUrl && <img src={imageUrl} alt="Tutorial-Image" className="img-preview" />}
