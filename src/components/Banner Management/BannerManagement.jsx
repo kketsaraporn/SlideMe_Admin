@@ -7,90 +7,51 @@ function BannerManagement() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState("");
   const [isUploading, setIsUploading] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(""); // สร้าง state สำหรับวันที่
+  const [selectedDate, setSelectedDate] = useState("");
+  const [formFields, setFormFields] = useState({
+    title: "",
+    subtitle: "",
+    description: "",
+  });
 
-  const handleUploadPhoto = async () => {
-    if (!selectedFile) {
-      alert("กรุณาเลือกไฟล์รูปภาพ!");
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append("file", selectedFile); // เพิ่มไฟล์ใน FormData
-
-    try {
-      const response = await fetch("http://localhost:3000/upload", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        alert("เกิดข้อผิดพลาดในการอัปโหลด");
-        return; // **เพิ่มการตรวจสอบสถานะของ response ก่อนที่จะทำการ parse ข้อมูล**
-      }
-
-      const data = await response.json();
-      alert("อัปโหลดรูปภาพสำเร็จ!");
-      console.log("Uploaded file URL:", data.filePath); // URL ของรูปภาพที่อัปโหลด
-    } catch (error) {
-      console.error("Error:", error);
-      alert("ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์");
-    }
+  // ฟังก์ชันอัปเดตค่าในฟอร์ม
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+    setFormFields({ ...formFields, [name]: value });
   };
 
-  // ฟังก์ชันจัดการไฟล์ที่เลือกและตรวจสอบไฟล์
+  // ฟังก์ชันจัดการยกเลิกและล้างค่าฟอร์ม
+  const handleCancel = () => {
+    setSelectedFile(null); // ล้างไฟล์ที่เลือก
+    setPreview(""); // ลบภาพตัวอย่าง
+    setSelectedDate(""); // รีเซ็ตวันที่
+    setIsActive(false); // ตั้งสถานะเป็นปิด
+    setFormFields({ title: "", subtitle: "", description: "" }); // รีเซ็ตฟอร์ม
+    alert("ฟอร์มถูกล้างข้อมูลเรียบร้อย!");
+  };
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // ตรวจสอบว่าไฟล์ที่เลือกเป็นรูปภาพหรือไม่
       if (!file.type.startsWith("image/")) {
         alert("กรุณาเลือกไฟล์รูปภาพเท่านั้น!");
         return;
       }
-
-      // ตรวจสอบขนาดไฟล์ไม่เกิน 10MB
       if (file.size > 10 * 1024 * 1024) {
         alert("ขนาดไฟล์ต้องไม่เกิน 10MB!");
         return;
       }
-
-      setSelectedFile(file); // เก็บไฟล์ลงใน state
-      setPreview(URL.createObjectURL(file)); // แสดงภาพตัวอย่าง
+      setSelectedFile(file);
+      setPreview(URL.createObjectURL(file));
     }
   };
 
   const handleSaveClick = () => {
-    Swal.fire({
-      title: "ยืนยันที่จะบันทึกข้อมูล?",
-      text: "",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "บันทึก",
-      cancelButtonText: "ยกเลิก",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "เสร็จสิ้น!",
-          text: "",
-          icon: "success",
-        });
-      }
-    });
-  };
-
-  const handleConfirmSave = () => {
-    setShowPopup(false);
     alert("บันทึกข้อมูลสำเร็จ!");
   };
 
-  const handleCancelSave = () => {
-    setShowPopup(false);
-  };
-
   const toggleStatus = () => {
-    setIsActive(!isActive); // เปลี่ยนสถานะจากเปิด/ปิด
+    setIsActive(!isActive);
   };
 
   return (
@@ -112,11 +73,6 @@ function BannerManagement() {
           <button className="btn-get-started">Get Started</button>
         </div>
 
-        <div className="banner-arrows">
-          <button className="btn rounded-pill bg-secondary">{"<"}</button>
-          <button className="btn rounded-pill bg-secondary">{">"}</button>
-        </div>
-
         <div className="upload-photo">
           <label className="btn bg-light">
             เลือกรูปภาพ
@@ -127,7 +83,6 @@ function BannerManagement() {
               style={{ display: "none" }}
             />
           </label>
-
           {preview && (
             <div className="preview-container">
               <img src={preview} alt="Preview" className="preview-image" />
@@ -142,79 +97,69 @@ function BannerManagement() {
               </button>
             </div>
           )}
-
-          <button
-            className="btn btn-primary"
-            onClick={handleUploadPhoto}
-            disabled={!selectedFile || isUploading}
-          >
-            {isUploading ? "กำลังอัปโหลด..." : "อัปโหลด"}
-          </button>
         </div>
       </div>
 
       <div className="form-section">
         <div className="form-group">
           <label>หัวข้อ</label>
-          <input type="text" placeholder="Enter" />
+          <input
+            type="text"
+            name="title"
+            value={formFields.title}
+            onChange={handleFieldChange}
+            placeholder="Enter"
+          />
         </div>
         <div className="form-group">
           <label>หัวข้อย่อย</label>
-          <input type="text" placeholder="Enter" />
+          <input
+            type="text"
+            name="subtitle"
+            value={formFields.subtitle}
+            onChange={handleFieldChange}
+            placeholder="Enter"
+          />
         </div>
-
         <div className="form-group">
           <label>รายละเอียด</label>
-          <textarea placeholder="Enter"></textarea>
+          <textarea
+            name="description"
+            value={formFields.description}
+            onChange={handleFieldChange}
+            placeholder="Enter"
+          ></textarea>
         </div>
-
         <div className="form-group">
           <label>วันที่</label>
           <input
             type="date"
             value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)} // ใช้ state เพื่อเก็บวันที่ที่เลือก
+            onChange={(e) => setSelectedDate(e.target.value)}
           />
         </div>
-
         <div className="form-group">
           <label>สถานะ</label>
           <div className="toggle-container">
             <label className="toggle">
               <input
                 type="checkbox"
-                checked={isActive} // ใช้ state isActive ควบคุมสถานะ
-                onChange={(e) => toggleStatus(e.target.checked)} // อัปเดตสถานะเมื่อมีการเปลี่ยนแปลง
+                checked={isActive}
+                onChange={toggleStatus}
               />
               <span className="slider"></span>
             </label>
           </div>
         </div>
-
         <div className="form-actions">
           <button className="save-button" onClick={handleSaveClick}>
             บันทึก
           </button>
-          <button className="cancel-button">ยกเลิก</button>
+          <button className="cancel-button" onClick={handleCancel}>
+            ยกเลิก
+          </button>
         </div>
       </div>
-
-      {showPopup && (
-        <div className="popup-container">
-          <div className="popup">
-            <h3>ยืนยันการบันทึก</h3>
-            <p>คุณต้องการบันทึกข้อมูลนี้ใช่หรือไม่?</p>
-            <div className="popup-actions">
-              <button className="btn-confirm" onClick={handleConfirmSave}>
-                ยืนยัน
-              </button>
-              <button className="btn-cancel" onClick={handleCancelSave}>
-                ยกเลิก
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
