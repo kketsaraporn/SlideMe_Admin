@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./EditAboutUsManagement.css";
 
 const EditAboutUsManagement = () => {
@@ -7,6 +8,7 @@ const EditAboutUsManagement = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [status, setStatus] = useState(false);
+  const navigate = useNavigate(); // สำหรับการเปลี่ยนหน้า
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -25,6 +27,8 @@ const EditAboutUsManagement = () => {
     clearForm();
   };
 
+  
+
   const clearForm = () => {
     setTitle("");
     setSubtitle("");
@@ -33,13 +37,42 @@ const EditAboutUsManagement = () => {
     setStatus(false);
   };
 
+  const handleSaveClick = (e) => {
+    e.preventDefault(); // ป้องกันการส่งฟอร์มทันที
+    Swal.fire({
+      title: "ยืนยันที่จะบันทึกข้อมูล?",
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "บันทึก",
+      cancelButtonText: "ยกเลิก",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "เสร็จสิ้น!",
+          text: "",
+          icon: "success",
+        }).then(() => {
+          navigate("/AboutUsManagement"); // กลับไปที่หน้า AboutUsManagement หลังจากกด OK
+        });
+      }
+    });
+  };
+
+  const handleCancel = () => {
+    // ใช้ navigate เพื่อกลับไปหน้า AboutUsManagement
+    navigate("/AboutUsManagement");
+  };
+
   return (
     <div className="edit-about-us-management">
       <h2>Edit About Us Management</h2>
 
       <div className="form-section">
         <h3>แก้ไข เกี่ยวกับเรา</h3>
-        <form>
+        <form onSubmit={handleSaveClick}>
           <div className="form-group">
             <label>หัวข้อ</label>
             <input
@@ -94,10 +127,15 @@ const EditAboutUsManagement = () => {
           </div>
 
           <div className="button-group">
-            <button type="button" onClick={handleSave} className="save-button">
+            <button type="submit" className="save-button">
               บันทึก
             </button>
-            <button type="button" onClick={clearForm} className="cancel-button">
+            <button
+              type="button"
+              onClick={handleCancel}
+              className="cancel-button"
+              style={{ backgroundColor: "black", color: "white" }}
+            >
               ยกเลิก
             </button>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // นำเข้า useNavigate จาก React Router สำหรับการเปลี่ยนเส้นทาง
+
 import "./AboutUsManagement.css";
 
 const AboutUsManagement = () => {
@@ -47,14 +48,31 @@ const AboutUsManagement = () => {
 
   // ฟังก์ชันสำหรับลบข้อมูลโดยใช้ ID
   const handleDelete = (id) => {
-    setAboutUsData(aboutUsData.filter((item) => item.id !== id)); // ลบข้อมูลที่ตรงกับ ID ออกจากรายการ
+    Swal.fire({
+      title: "คุณแน่ใจหรือไม่?",
+      text: "คุณต้องการลบบัญชีนี้ใช่หรือไม่? การกระทำนี้ไม่สามารถย้อนกลับได้!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "ลบ",
+      cancelButtonText: "ยกเลิก",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setAboutUsData(aboutUsData.filter((item) => item.id !== id)); // ลบข้อมูลที่ตรงกับ ID ออกจากรายการ
+        Swal.fire({
+          title: "ลบสำเร็จ!",
+          text: "บัญชีถูกลบออกจากระบบ",
+          icon: "success",
+        });
+      }
+    });
   };
 
   // ฟังก์ชันสำหรับแก้ไขข้อมูล โดยใช้ navigate ไปยังหน้าแก้ไข พร้อมกับส่ง ID ไปด้วย
   const handleEdit = (id) => {
     navigate(`/about-edit/${id}`); // เปลี่ยนหน้าไปที่ URL /edit/ตามด้วย ID ที่ต้องการแก้ไข
   };
-
 
   return (
     <div className="about-us-management">
@@ -92,7 +110,7 @@ const AboutUsManagement = () => {
           <div className="form-group">
             <label>รูปภาพ</label>
             <input
-              class="form-control"
+              className="form-control"
               type="file"
               id="formFile"
               onChange={handleImageUpload}
@@ -104,17 +122,17 @@ const AboutUsManagement = () => {
 
           {/* filters */}
           <div className="todo-filters-container">
-              <label>สถานะ</label>
-              &nbsp;
-              <div className="toggle-container">
-                <label className="toggle">
-                  <input
-                    type="checkbox"
-                    checked={status}
-                    onChange={(e) => setStatus(e.target.checked)}
-                  />
-                  <span className="slider"></span>
-                </label>
+            <label>สถานะ</label>
+            &nbsp;
+            <div className="toggle-container">
+              <label className="toggle">
+                <input
+                  type="checkbox"
+                  checked={status}
+                  onChange={(e) => setStatus(e.target.checked)}
+                />
+                <span className="slider"></span>
+              </label>
             </div>
           </div>
 
@@ -175,9 +193,9 @@ const AboutUsManagement = () => {
                   <button
                     onClick={() => handleDelete(item.id)}
                     className="delete-button"
+                    style={{ backgroundColor: "black", color: "white" }}
                   >
                     ลบ
-                    
                   </button>
                 </td>
               </tr>
