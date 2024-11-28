@@ -78,7 +78,13 @@ const AdminManagement = () => {
   const handleEdit = (id) => {
     // นำทางไปยังหน้า EditAdminAccount พร้อม ID
     navigate(`/edit-admin/${id}`);
+  }; */
+
+  const handleEdit = (id) => {
+    navigate(`/edit-admin/${id}`, { state: { adminList, updateAdmin } });
   };
+
+  
 
   const handleDelete = (id) => {
     console.log("Delete admin with ID:", id);
