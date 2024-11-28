@@ -35,7 +35,7 @@ function EditVehicle({ vehicleTypes, onSave }) {
     };
 
     onSave(editedVehicle);
-    navigate('/'); // กลับไปหน้าหลักหลังจากบันทึก
+    navigate('/vehiclemanage'); // กลับไปหน้าหลักหลังจากบันทึก
   };
 
   // ฟังก์ชันแก้ไขรูปภาพ
