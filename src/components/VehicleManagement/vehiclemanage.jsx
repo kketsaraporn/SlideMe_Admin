@@ -83,7 +83,7 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
         />
         <label>รูปภาพ</label>
         <input
-          class="form-control"
+          className="form-control"
           type="file"
           id="formFile"
           onChange={(e) => setFile(e.target.files[0])}
