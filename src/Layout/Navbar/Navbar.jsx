@@ -41,7 +41,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/permission" && "active"
               }`}
             >
-              Permission
+              Permission Management
             </button>
           </Link>
 
@@ -51,7 +51,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/status" && "active"
               }`}
             >
-              สถานะบัญชี
+              Status Management
             </button>
           </Link>
 
@@ -61,7 +61,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/distancemanagement" && "active"
               }`}
             >
-              จัดการระยะทาง
+              Distance Management
             </button>
           </Link>
 
@@ -71,7 +71,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/vehiclemanage" && "active"
               }`}
             >
-              จัดการประเภทสไลด์
+              Vehicle Management
             </button>
           </Link>
 
@@ -82,7 +82,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/pricemanagement" && "active"
               }`}
             >
-              จัดการอัตราค่าบริการ
+              Price Management
             </button>
           </Link>
 
@@ -92,7 +92,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/checkorder" && "active"
               }`}
             >
-              ตรวจสอบ Order
+              Check Order Management
             </button>
           </Link>
 
@@ -102,7 +102,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/approveprovider" && "active"
               }`}
             >
-              ตรวจสอบการสมัคร
+              Approveprovider Management
             </button>
           </Link>
 
@@ -112,7 +112,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/review" && "active"
               }`}
             >
-              จัดกาารข้อมูลรีวิว
+              Review Management
             </button>
           </Link>
 
@@ -152,7 +152,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/tutorialmanagement" && "active"
               }`}
             >
-              การใช้งานแอป
+              Tutorial Management
             </button>
           </Link>
 
@@ -162,7 +162,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/aboutusmanagement" && "active"
               }`}
             >
-              เกี่ยวกับเรา
+              About Us Management
             </button>
           </Link>
         </ul>

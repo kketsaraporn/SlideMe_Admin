@@ -177,6 +177,7 @@ const AboutUsManagement = () => {
                     className="delete-button"
                   >
                     ลบ
+                    
                   </button>
                 </td>
               </tr>
