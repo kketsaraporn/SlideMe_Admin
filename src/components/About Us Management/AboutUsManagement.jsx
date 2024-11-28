@@ -55,15 +55,6 @@ const AboutUsManagement = () => {
     navigate(`/about-edit/${id}`); // เปลี่ยนหน้าไปที่ URL /edit/ตามด้วย ID ที่ต้องการแก้ไข
   };
 
-  /* const handleEdit = (id) => {
-    const itemToEdit = aboutUsData.find(item => item.id === id);
-    setTitle(itemToEdit.title);
-    setSubtitle(itemToEdit.subtitle);
-    setDescription(itemToEdit.description);
-    setImage(itemToEdit.image);
-    setStatus(itemToEdit.status);
-    setAboutUsData(aboutUsData.filter(item => item.id !== id));
-  }; */
 
   return (
     <div className="about-us-management">
@@ -178,7 +169,7 @@ const AboutUsManagement = () => {
                   </div>
                 </td>
                 <td>
-                  <button onClick={() => handleEdit(item.id)}>แก้ไข</button>
+                  <button className="btn btn-secondary" onClick={() => handleEdit(item.id)}>แก้ไข</button>
                 </td>
                 <td>
                   <button
