@@ -49,7 +49,7 @@ function OrderDetails() {
           {/* Google Map */}
       <div className="map-container">
         <GoogleMap
-          mapContainerStyle={{ width: "100%", height: "400px" }}
+          mapContainerStyle={{ width: "100%", height: "600px" }}
           center={defaultCenter}
           zoom={12}
         >
