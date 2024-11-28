@@ -1,10 +1,8 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom"; // นำเข้า useNavigate
 import OrderData from "../../app-data/OrderData";
-/* import mapPic from "../../imgs/map.png"; */
+import mapPic from "../../imgs/map.png";
 import "./OrderDetails.css";
-
-// import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 function OrderDetails() {
   const { orderNumber } = useParams(); // ดึง orderNumber จาก URL
@@ -21,18 +19,6 @@ function OrderDetails() {
     navigate("/checkOrder"); // ใช้ navigate ไปที่หน้า /checkOrder
   };
 
-   // โหลด Google Maps API
-   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAP_API_KEY, // ใส่ API Key จาก .env
-  });
-
-  if (loadError) return <div>Error loading maps</div>;
-  if (!isLoaded) return <div>Loading...</div>;
-
-   // ตำแหน่งตัวอย่าง (กรุงเทพฯ)
-   const defaultCenter = { lat: 13.7563, lng: 100.5018 };
-
-
   return (
     <div className="order-details-container">
       <h4>Order Details for Order Number: {orderDetails.order_number}</h4>
@@ -44,25 +30,7 @@ function OrderDetails() {
               style={{ fontSize: "2rem" }}
             ></i>
           </button>
-
-          {/* Google Map */}
-      <div className="map-container">
-        <h5>Location</h5>
-        <GoogleMap
-          mapContainerStyle={{ width: "100%", height: "400px" }}
-          center={defaultCenter}
-          zoom={12}
-        >
-          {/* Marker ที่ตำแหน่ง defaultCenter */}
-          <Marker position={defaultCenter} />
-        </GoogleMap>
-      </div>
-
-          
-
-          {/* <img src={mapPic} alt="" className="order-details-map" /> */}
-
-
+          <img src={mapPic} alt="" className="order-details-map" />
         </div>
         <div className="order-details-infos">
           <div className="order-details-info-box1">
