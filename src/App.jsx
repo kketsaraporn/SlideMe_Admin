@@ -155,13 +155,7 @@ function App() {
 
           <Route path="/bannermanagement" element={<BannerManagement />} />
 
-          <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
-          <Route path="/about-edit/:id" element={<EditAboutUsManagement />} />
-
-          <Route path="/approveprovider" element={<ApproveProvider />} />
-          <Route path="/details/:id" element={<Details />} />
-
-          <Route path="/userManagement" element={<User />} />
+          <Route path="/approveprovider" element={<ApproveProvider />} />          <Route path="/details/:id" element={<Details />} />          <Route path="/userManagement" element={<User />} />
           <Route path="/edituser/:userId" element={<EditUser />} />
           <Route path="/userdetail/:userId" element={<UserDetail />} />
           
@@ -171,6 +165,9 @@ function App() {
 
           <Route path="/tutorialmanagement" element={<TutorialManagement tutoriales={tutoriales} setTutoriales={setTutoriales} />} />
           <Route path="/edit-tutorial/:id" element={<EditTutorial tutoriales={tutoriales} onSave={ handleSaveEditTutorial} />} />
+
+          <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
+          <Route path="/about-edit/:id" element={<EditAboutUsManagement />} />
         </Route>
 
         {/* Catch all route */}
