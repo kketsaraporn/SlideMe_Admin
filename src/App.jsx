@@ -141,6 +141,8 @@ function App() {
           <Route path="/vehiclemanage" element={<VehicleManagement vehicleTypes={vehicleTypes} setVehicleTypes={setVehicleTypes} />} />
           <Route path="/edit-vehicle/:id" element={<EditVehicle vehicleTypes={vehicleTypes} onSave={handleSaveEditVehicle} />} />
 
+      
+
           <Route path="/pricemanagement" element={<PriceManagement />} />
           <Route path="/edit-price/:id" element={<EditPrice />} />
 
@@ -154,7 +156,7 @@ function App() {
           <Route path="/bannermanagement" element={<BannerManagement />} />
 
           <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
-          <Route path="/edit/:id" element={<EditAboutUsManagement />} />
+          <Route path="/about-edit/:id" element={<EditAboutUsManagement />} />
 
           <Route path="/approveprovider" element={<ApproveProvider />} />
           <Route path="/details/:id" element={<Details />} />
@@ -169,7 +171,6 @@ function App() {
 
           <Route path="/tutorialmanagement" element={<TutorialManagement tutoriales={tutoriales} setTutoriales={setTutoriales} />} />
           <Route path="/edit-tutorial/:id" element={<EditTutorial tutoriales={tutoriales} onSave={ handleSaveEditTutorial} />} />
-
         </Route>
 
         {/* Catch all route */}

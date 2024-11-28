@@ -41,7 +41,7 @@ const EditAdminAccount = () => {
         admin.id === parseInt(id) ? { ...admin, ...formData } : admin
       )
     );
-    navigate("/"); // นำทางกลับไปที่หน้า Admin Management
+    navigate("/adminmanagement"); // นำทางกลับไปที่หน้า Admin Management
   };
 
   return (
@@ -89,7 +89,7 @@ const EditAdminAccount = () => {
             <button
               type="button"
               className="cancel-button"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/adminmanagement")}
             >
               ยกเลิก
             </button>

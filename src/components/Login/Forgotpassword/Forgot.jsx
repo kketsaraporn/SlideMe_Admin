@@ -32,7 +32,7 @@ function Forgot() {
         </div>
         <form>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">
+            <label htmlFor="email" className="form-label" style={{ fontSize: "15px", fontWeight: "bold"}}>
               Email address:
             </label>
             <input

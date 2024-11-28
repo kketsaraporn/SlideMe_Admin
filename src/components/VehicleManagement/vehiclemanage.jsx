@@ -13,6 +13,7 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
   // ฟังก์ชันแก้ไขข้อมูล
   const handleEdit = (id) => {
     navigate(`/edit-vehicle/${id}`);
+  
   };
 
   // ฟังก์ชันบันทึกข้อมูล

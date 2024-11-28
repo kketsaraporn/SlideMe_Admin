@@ -49,6 +49,7 @@ function AccountStatus({ statuses, setStatuses }) {
     setAccountName('');
     setStatus(false);
     navigate('/status');
+
   };
 
   // ฟังก์ชันสําหรับการลบ

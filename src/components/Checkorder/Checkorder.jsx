@@ -102,17 +102,17 @@ function Checkorder() {
               <td className="align-middle">{item.provider}</td>
               <td className="align-middle text-center">
                 {item.status === "success" ? (
-                  <span className="me-3 bg-success text-white px-3 py-1 text-sm font-bold rounded-2xl">
+                  <span className="bg-success text-white px-3 py-1 text-sm font-bold rounded-2xl">
                     Successful
                     <i className="bi bi-check-circle-fill ml-1 text-green-500"></i>
                   </span>
                 ) : item.status === "waiting" ? (
-                  <span className="me-3 bg-warning text-white px-3 py-1 text-sm font-bold rounded-2xl">
+                  <span className="bg-warning text-white px-3  py-1 text-sm font-bold rounded-2xl">
                     Waiting
                     <i className="bi bi-hourglass-split ml-1 text-yellow-100"></i>
                   </span>
                 ) : item.status === "failed" ? (
-                  <span className="me-3 bg-danger text-white px-3 py-1 text-sm font-bold rounded-2xl">
+                  <span className="bg-danger text-white px-3 py-1 text-sm font-bold rounded-2xl">
                     Unsuccessful{" "}
                     <i className="bi bi-x-circle-fill ml-1 text-red-200"></i>
                   </span>
