@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './TutorialManagement.css'; 
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./TutorialManagement.css";
 
 function TutorialManagement({ tutoriales, setTutoriales }) {
   const navigate = useNavigate(); //ใช้ navigate เพื่อนำทางไปยังหน้าการแก้ไข
-  const [tutorialName, setTutorialName] = useState('');
-  const [details, setDetails] = useState('');
-  const [subs, setSubs] = useState('');
+  const [tutorialName, setTutorialName] = useState("");
+  const [details, setDetails] = useState("");
+  const [subs, setSubs] = useState("");
   const [status, setStatus] = useState(false);
   const [file, setFile] = useState(null);
   const [editingId, setEditingId] = useState(null);
 
   // ฟังก์ชันสําหรับบันทึกการแก้ไข
   const handleEdit = (id) => {
-    navigate(`/edit/${id}`);
+    navigate(`/edit-tutorial/${id}`);
   };
 
   // ฟังก์ชันสําหรับบันทึก
@@ -25,18 +25,20 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
 
     // แก้ไขข้อมูล
     if (editingId) {
-      setTutoriales(tutoriales.map(type => 
-        type.id === editingId
-          ? {
-              ...type,
-              name: tutorialName,
-              details: details,
-              subs: subs,
-              image: file ? URL.createObjectURL(file) : type.image,
-              status: status,
-            }
-          : type
-      ));
+      setTutoriales(
+        tutoriales.map((type) =>
+          type.id === editingId
+            ? {
+                ...type,
+                name: tutorialName,
+                details: details,
+                subs: subs,
+                image: file ? URL.createObjectURL(file) : type.image,
+                status: status,
+              }
+            : type
+        )
+      );
       setEditingId(null);
     } else {
       const newTutorial = {
@@ -50,9 +52,9 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
       setTutoriales([...tutoriales, newTutorial]);
     }
 
-    setTutorialName('');
-    setDetails('');
-    setSubs('');
+    setTutorialName("");
+    setDetails("");
+    setSubs("");
     setStatus(false);
     setFile(null);
   };
@@ -67,7 +69,7 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
       <h1>Tutorial Management</h1>
 
       <div className="form-container">
-        <h2>{editingId ? 'แก้ไขคู่มือ' : 'เพิ่มคู่มือ'}</h2>
+        <h2>{editingId ? "แก้ไขคู่มือ" : "เพิ่มคู่มือ"}</h2>
         <label>หัวข้อ</label>
         <input
           type="text"
@@ -91,16 +93,18 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
         />
         <label>รูปภาพ</label>
         <input
+          class="form-control"
           type="file"
+          id="formFile"
           onChange={(e) => setFile(e.target.files[0])}
         />
         <label>สถานะ</label>
         <div className="toggle-container">
           <label className="toggle">
-            <input 
-              type="checkbox" 
-              checked={status} 
-              onChange={(e) => setStatus(e.target.checked)} 
+            <input
+              type="checkbox"
+              checked={status}
+              onChange={(e) => setStatus(e.target.checked)}
             />
             <span className="slider"></span>
           </label>
@@ -108,16 +112,21 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
         <br />
         <br />
         <button onClick={handleSave} className="save-button">
-          {editingId ? 'บันทึกการแก้ไข' : 'บันทึก'}
+          {editingId ? "บันทึกการแก้ไข" : "บันทึก"}
         </button>
-        <button className="cancel-button" onClick={() => {
-          setTutorialName('');
-          setDetails('');
-          setSubs('');
-          setStatus(false);
-          setFile(null);
-          setEditingId(null);
-        }}>ยกเลิก</button>
+        <button
+          className="cancel-button"
+          onClick={() => {
+            setTutorialName("");
+            setDetails("");
+            setSubs("");
+            setStatus(false);
+            setFile(null);
+            setEditingId(null);
+          }}
+        >
+          ยกเลิก
+        </button>
       </div>
 
       <div className="table-container">
@@ -139,7 +148,11 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
                 <td>{index + 1}</td>
                 <td>{type.name}</td>
                 <td>
-                  <img src={type.image} alt={type.name} className="img-thumbnail" />
+                  <img
+                    src={type.image}
+                    alt={type.name}
+                    className="img-thumbnail"
+                  />
                 </td>
                 <td>
                   <label className="toggle">
@@ -157,10 +170,20 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
                   </label>
                 </td>
                 <td>
-                  <button className="edit-button" onClick={() => handleEdit(type.id)}>แก้ไข</button>
+                  <button
+                    className="edit-button"
+                    onClick={() => handleEdit(type.id)}
+                  >
+                    แก้ไข
+                  </button>
                 </td>
                 <td>
-                  <button className="delete-button" onClick={() => handleDelete(type.id)}>ลบ</button>
+                  <button
+                    className="delete-button"
+                    onClick={() => handleDelete(type.id)}
+                  >
+                    ลบ
+                  </button>
                 </td>
               </tr>
             ))}
