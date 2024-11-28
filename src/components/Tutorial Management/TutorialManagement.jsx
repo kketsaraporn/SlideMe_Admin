@@ -13,7 +13,7 @@ function TutorialManagement({ tutoriales, setTutoriales }) {
 
   // ฟังก์ชันสําหรับบันทึกการแก้ไข
   const handleEdit = (id) => {
-    navigate(`/edit/${id}`);
+    navigate(`/tutorial-edit/${id}`);
   };
 
   // ฟังก์ชันสําหรับบันทึก

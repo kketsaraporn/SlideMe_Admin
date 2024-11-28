@@ -52,7 +52,7 @@ const AboutUsManagement = () => {
 
     // ฟังก์ชันสำหรับแก้ไขข้อมูล โดยใช้ navigate ไปยังหน้าแก้ไข พร้อมกับส่ง ID ไปด้วย
     const handleEdit = (id) => {
-        navigate(`/edit/${id}`); // เปลี่ยนหน้าไปที่ URL /edit/ตามด้วย ID ที่ต้องการแก้ไข
+        navigate(`/about-edit/${id}`); // เปลี่ยนหน้าไปที่ URL /edit/ตามด้วย ID ที่ต้องการแก้ไข
       };
 
   /* const handleEdit = (id) => {

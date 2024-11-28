@@ -154,7 +154,7 @@ function App() {
           <Route path="/bannermanagement" element={<BannerManagement />} />
 
           <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
-          <Route path="/edit/:id" element={<EditAboutUsManagement />} />
+          <Route path="/about-edit/:id" element={<EditAboutUsManagement />} />
 
           <Route path="/approveprovider" element={<ApproveProvider />} />
           <Route path="/details/:id" element={<Details />} />
@@ -168,7 +168,7 @@ function App() {
           <Route path="/providerdetail/:providerId" element={<ProviderDetail />} />
 
           <Route path="/tutorialmanagement" element={<TutorialManagement tutoriales={tutoriales} setTutoriales={setTutoriales} />} />
-          <Route path="/edit/:id" element={<EditTutorial tutoriales={tutoriales} onSave={handleSaveEdit} />} />
+          <Route path="/tutorial-edit/:id" element={<EditTutorial tutoriales={tutoriales} onSave={handleSaveEdit} />} />
 
         </Route>
 
