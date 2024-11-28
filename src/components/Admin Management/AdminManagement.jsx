@@ -81,7 +81,26 @@ const AdminManagement = () => {
   };
 
   const handleDelete = (id) => {
-    console.log("Delete admin with ID:", id);
+    Swal.fire({
+      title: "คุณแน่ใจหรือไม่?",
+      text: "คุณต้องการลบบัญชีนี้ใช่หรือไม่? การกระทำนี้ไม่สามารถย้อนกลับได้!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "ลบ",
+      cancelButtonText: "ยกเลิก",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // ลบ admin ที่มี id ตรงกับรายการที่เลือก
+        setAdminList(adminList.filter((admin) => admin.id !== id));
+        Swal.fire({
+          title: "ลบสำเร็จ!",
+          text: "บัญชีถูกลบออกจากระบบ",
+          icon: "success",
+        });
+      }
+    });
   };
 
   //เพื่ออัปเดตรายชื่อ adminList
@@ -93,6 +112,16 @@ const AdminManagement = () => {
     );
   };
   
+  const handleCancel = () => {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+  };
   
 
   return (
@@ -155,10 +184,10 @@ const AdminManagement = () => {
           </div>
           <div className="button-row">
             <button type="submit" className="save-button">
-              บันทึก
+                บันทึก
             </button>
-            <button type="button" className="cancel-button">
-              ยกเลิก
+            <button type="button" className="cancel-button" onClick={handleCancel}>
+                ยกเลิก
             </button>
           </div>
         </form>
