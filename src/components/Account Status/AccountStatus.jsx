@@ -10,7 +10,7 @@ function AccountStatus({ statuses, setStatuses }) {
 
   // ฟังก์ชันสําหรับการแก้ไข
   const handleEdit = (id) => {
-    navigate(`/edit/${id}`);
+    navigate(`/edit-status/${id}`);
   };
 
   // ฟังก์ชันสําหรับการบันทึก
@@ -48,7 +48,8 @@ function AccountStatus({ statuses, setStatuses }) {
 
     setAccountName('');
     setStatus(false);
-    navigate('/accountstatus');
+    navigate('/status');
+
   };
 
   // ฟังก์ชันสําหรับการลบ

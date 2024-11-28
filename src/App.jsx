@@ -134,12 +134,14 @@ function App() {
           <Route path="/permission" element={<Permission />} />
 
           <Route path="/status" element={<AccountStatus  statuses={statuses} setStatuses={setStatuses}/>} />
-          <Route path="/edit/:id" element={<EditStatus statuses={statuses} onSave={handleSaveEdit} />} />
+          <Route path="/edit-status/:id" element={<EditStatus statuses={statuses} onSave={handleSaveEdit} />} />
 
           <Route path="/distancemanagement" element={<DistanceManagement />} />
 
           <Route path="/vehiclemanage" element={<VehicleManagement vehicleTypes={vehicleTypes} setVehicleTypes={setVehicleTypes} />} />
-          <Route path="/vehicle-edit/:id" element={<EditVehicle vehicleTypes={vehicleTypes} onSave={handleSaveEdit} />} />
+          <Route path="/edit-vehicle/:id" element={<EditVehicle vehicleTypes={vehicleTypes} onSave={handleSaveEditVehicle} />} />
+
+      
 
           <Route path="/pricemanagement" element={<PriceManagement />} />
           <Route path="/edit-price/:id" element={<EditPrice />} />
@@ -153,13 +155,7 @@ function App() {
 
           <Route path="/bannermanagement" element={<BannerManagement />} />
 
-          <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
-          <Route path="/about-edit/:id" element={<EditAboutUsManagement />} />
-
-          <Route path="/approveprovider" element={<ApproveProvider />} />
-          <Route path="/details/:id" element={<Details />} />
-
-          <Route path="/userManagement" element={<User />} />
+          <Route path="/approveprovider" element={<ApproveProvider />} />          <Route path="/details/:id" element={<Details />} />          <Route path="/userManagement" element={<User />} />
           <Route path="/edituser/:userId" element={<EditUser />} />
           <Route path="/userdetail/:userId" element={<UserDetail />} />
           
@@ -168,8 +164,10 @@ function App() {
           <Route path="/providerdetail/:providerId" element={<ProviderDetail />} />
 
           <Route path="/tutorialmanagement" element={<TutorialManagement tutoriales={tutoriales} setTutoriales={setTutoriales} />} />
-          <Route path="/tutorial-edit/:id" element={<EditTutorial tutoriales={tutoriales} onSave={handleSaveEdit} />} />
+          <Route path="/edit-tutorial/:id" element={<EditTutorial tutoriales={tutoriales} onSave={ handleSaveEditTutorial} />} />
 
+          <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
+          <Route path="/about-edit/:id" element={<EditAboutUsManagement />} />
         </Route>
 
         {/* Catch all route */}

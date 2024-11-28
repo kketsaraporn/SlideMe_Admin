@@ -152,7 +152,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/tutorialmanagement" && "active"
               }`}
             >
-              การใช้งานเว็บไซต์
+              การใช้งานแอป
             </button>
           </Link>
 

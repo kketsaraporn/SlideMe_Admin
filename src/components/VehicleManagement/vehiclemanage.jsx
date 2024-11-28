@@ -1,18 +1,19 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './vehiclemanage.css'; 
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./vehiclemanage.css";
 
-function VehicleManagement({ vehicleTypes, setVehicleTypes }) { 
+function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
   const navigate = useNavigate(); //ใช้ navigate เพื่อนำทางไปยังหน้าการแก้ไข
-  const [vehicleName, setVehicleName] = useState('');
-  const [details, setDetails] = useState('');
+  const [vehicleName, setVehicleName] = useState("");
+  const [details, setDetails] = useState("");
   const [status, setStatus] = useState(false);
   const [file, setFile] = useState(null);
   const [editingId, setEditingId] = useState(null);
 
   // ฟังก์ชันแก้ไขข้อมูล
   const handleEdit = (id) => {
-    navigate(`/vehicle-edit/${id}`);
+    navigate(`/edit-vehicle/${id}`);
+  
   };
 
   // ฟังก์ชันบันทึกข้อมูล
@@ -24,17 +25,19 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
 
     // แก้ไขข้อมูล
     if (editingId) {
-      setVehicleTypes(vehicleTypes.map(type => 
-        type.id === editingId
-          ? {
-              ...type,
-              name: vehicleName,
-              details: details,
-              image: file ? URL.createObjectURL(file) : type.image,
-              status: status,
-            }
-          : type
-      ));
+      setVehicleTypes(
+        vehicleTypes.map((type) =>
+          type.id === editingId
+            ? {
+                ...type,
+                name: vehicleName,
+                details: details,
+                image: file ? URL.createObjectURL(file) : type.image,
+                status: status,
+              }
+            : type
+        )
+      );
       setEditingId(null); // รีเซ็ต ID หลังการบันทึก
     } else {
       const newVehicle = {
@@ -47,8 +50,8 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
       setVehicleTypes([...vehicleTypes, newVehicle]);
     }
 
-    setVehicleName('');
-    setDetails('');
+    setVehicleName("");
+    setDetails("");
     setStatus(false);
     setFile(null);
   };
@@ -63,7 +66,7 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
       <h1>Vehicle Type Management</h1>
 
       <div className="form-container">
-        <h2>{editingId ? 'แก้ไขประเภทรถ' : 'เพิ่มประเภทรถ'}</h2>
+        <h2>{editingId ? "แก้ไขประเภทรถ" : "เพิ่มประเภทรถ"}</h2>
         <label>ชื่อประเภทรถ</label>
         <input
           type="text"
@@ -80,16 +83,18 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
         />
         <label>รูปภาพ</label>
         <input
+          class="form-control"
           type="file"
+          id="formFile"
           onChange={(e) => setFile(e.target.files[0])}
         />
         <label>สถานะ</label>
         <div className="toggle-container">
           <label className="toggle">
-            <input 
-              type="checkbox" 
-              checked={status} 
-              onChange={(e) => setStatus(e.target.checked)} 
+            <input
+              type="checkbox"
+              checked={status}
+              onChange={(e) => setStatus(e.target.checked)}
             />
             <span className="slider"></span>
           </label>
@@ -97,15 +102,20 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
         <br />
         <br />
         <button onClick={handleSave} className="save-button">
-          {editingId ? 'บันทึกการแก้ไข' : 'บันทึก'}
+          {editingId ? "บันทึกการแก้ไข" : "บันทึก"}
         </button>
-        <button className="cancel-button" onClick={() => {
-          setVehicleName('');
-          setDetails('');
-          setStatus(false);
-          setFile(null);
-          setEditingId(null);
-        }}>ยกเลิก</button>
+        <button
+          className="cancel-button"
+          onClick={() => {
+            setVehicleName("");
+            setDetails("");
+            setStatus(false);
+            setFile(null);
+            setEditingId(null);
+          }}
+        >
+          ยกเลิก
+        </button>
       </div>
 
       <div className="table-container">
@@ -127,7 +137,11 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
                 <td>{index + 1}</td>
                 <td>{type.name}</td>
                 <td>
-                  <img src={type.image} alt={type.name} className="img-thumbnail" />
+                  <img
+                    src={type.image}
+                    alt={type.name}
+                    className="img-thumbnail"
+                  />
                 </td>
                 <td>
                   <label className="toggle">
@@ -145,10 +159,20 @@ function VehicleManagement({ vehicleTypes, setVehicleTypes }) {
                   </label>
                 </td>
                 <td>
-                  <button className="edit-button" onClick={() => handleEdit(type.id)}>แก้ไข</button>
+                  <button
+                    className="edit-button"
+                    onClick={() => handleEdit(type.id)}
+                  >
+                    แก้ไข
+                  </button>
                 </td>
                 <td>
-                  <button className="delete-button" onClick={() => handleDelete(type.id)}>ลบ</button>
+                  <button
+                    className="delete-button"
+                    onClick={() => handleDelete(type.id)}
+                  >
+                    ลบ
+                  </button>
                 </td>
               </tr>
             ))}

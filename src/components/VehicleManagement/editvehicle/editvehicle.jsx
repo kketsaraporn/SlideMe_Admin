@@ -68,7 +68,9 @@ function EditVehicle({ vehicleTypes, onSave }) {
         />
         <label>รูปภาพ</label>
         <input 
-          type="file" 
+           class="form-control"
+           type="file"
+           id="formFile"
           onChange={handleFileChange} 
         />
         {imageUrl && <img src={imageUrl} alt="Vehicle" className="img-preview" />}
