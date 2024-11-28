@@ -139,7 +139,7 @@ function App() {
           <Route path="/distancemanagement" element={<DistanceManagement />} />
 
           <Route path="/vehiclemanage" element={<VehicleManagement vehicleTypes={vehicleTypes} setVehicleTypes={setVehicleTypes} />} />
-          <Route path="/edit/:id" element={<EditVehicle vehicleTypes={vehicleTypes} onSave={handleSaveEdit} />} />
+          <Route path="/vehicle-edit/:id" element={<EditVehicle vehicleTypes={vehicleTypes} onSave={handleSaveEdit} />} />
 
           <Route path="/pricemanagement" element={<PriceManagement />} />
           <Route path="/edit-price/:id" element={<EditPrice />} />

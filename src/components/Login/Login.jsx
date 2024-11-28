@@ -53,7 +53,7 @@ function Login({ setToken, setRole, token }) {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="account" className="form-label font-medium text-[14px]">
+            <label htmlFor="account" className="form-label font-bold text-[14px]">
               Account Name
             </label>
             <input
@@ -66,7 +66,7 @@ function Login({ setToken, setRole, token }) {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label font-medium text-[14px]">
+            <label htmlFor="password" className="form-label font-bold text-[14px]">
               Password
             </label>
             <input
