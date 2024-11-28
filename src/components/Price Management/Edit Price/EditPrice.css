@@ -7,7 +7,7 @@
     margin: auto;
   }
   
-  .edit-price-form {
+  .edit-price-container .edit-price-form {
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -22,12 +22,12 @@
   
 
 
-  .form-group {
+  .edit-price-container .form-group {
     margin-bottom: 15px;
  
   }
   
-  .form-group label {
+  .edit-price-container .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -36,13 +36,13 @@
   
 
   
-  .form-buttons {
+  .edit-price-container .form-buttons {
     display: flex;
     gap: 1.5rem;
     margin-top: 20px;
 
   }
-  .form-group input {
+  .edit-price-container .form-group input {
 
     width: 100%;
     padding: 15px;
@@ -78,7 +78,7 @@
   }
    */
    /* Popup styles */
-  .popupEP-container {
+   .edit-price-container .popupEP-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -91,7 +91,7 @@
     z-index: 1000;
   }
   
-  .popupEP {
+  .edit-price-container .popupEP {
     background: white;
     padding: 2rem;
     border-radius: 1rem;
@@ -99,18 +99,36 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
-  .popupEP h3 {
+  .edit-price-container .popupEP h3 {
     margin-bottom: 1rem;
   }
   
-  .popupEP p {
+  .edit-price-container .popupEP p {
     margin-bottom: 2rem;
   }
   
-  .popupEP-actions {
+  .edit-price-container .popupEP-actions {
     display: flex;
     gap: 1rem;
     justify-content: center;
+  }
+
+  .edit-price-container .btn-save {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  .edit-price-container .btn-cancel {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
   }
 
 /*   .btn-save {

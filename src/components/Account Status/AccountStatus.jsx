@@ -48,7 +48,7 @@ function AccountStatus({ statuses, setStatuses }) {
 
     setAccountName('');
     setStatus(false);
-    
+    navigate('/adminmanagement');
   };
 
   // ฟังก์ชันสําหรับการลบ

@@ -21,7 +21,7 @@
   margin-top: 10px;
 }
 
-.tu-container input[type="text"], textarea, input[type="file"] {
+.tu-container input[type="text"], textarea, .tu-container input[type="file"] {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
