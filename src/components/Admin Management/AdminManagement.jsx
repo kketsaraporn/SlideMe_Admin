@@ -14,7 +14,7 @@ const AdminManagement = () => {
 
   const [adminList, setAdminList] = useState([
     { id: 1, name: "roren" },
-    { id: 2, name: "roren" },
+    { id: 2, name: "mfanthom3" },
   ]);
 
   const navigate = useNavigate();
@@ -200,9 +200,7 @@ const AdminManagement = () => {
             ))}
           </tbody>
         </table>
-        <div className="admin-list-pagination">
-          <p>Showing 1 - 2 of 4</p>
-        </div>
+        
       </div>
     </div>
   );
