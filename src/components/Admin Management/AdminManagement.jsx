@@ -26,12 +26,52 @@ const AdminManagement = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // เพิ่ม: ตรวจสอบว่าฟิลด์ทั้งหมดกรอกครบถ้วนและรหัสผ่านตรงกัน
+  if (
+    !formData.firstName || // ตรวจสอบว่าชื่อกรอกหรือยัง
+    !formData.lastName || // ตรวจสอบว่านามสกุลกรอกหรือยัง
+    !formData.phone || // ตรวจสอบว่าเบอร์โทรกรอกหรือยัง
+    !formData.email || // ตรวจสอบว่าอีเมลกรอกหรือยัง
+    !formData.password || // ตรวจสอบว่ารหัสผ่านกรอกหรือยัง
+    formData.password !== formData.confirmPassword // ตรวจสอบว่ารหัสผ่านกับยืนยันรหัสผ่านตรงกันหรือไม่
+  ) {
     Swal.fire({
-      title: "บันทึกข้อมูลสำเร็จ!",
-      text: "ข้อมูลถูกบันทึก",
-      icon: "success"
+      title: "เกิดข้อผิดพลาด!",
+      text: "รุณากรอกข้อมูลให้ครบถ้วนและตรวจสอบรหัสผ่าน",
+      icon: "error",
     });
-    console.log("Form submitted:", formData);
+    return; // หยุดการทำงานถ้าข้อมูลไม่ครบหรือรหัสผ่านไม่ตรงกัน
+  }
+
+  // เพิ่ม: สร้าง object สำหรับ admin ใหม่ที่ต้องการเพิ่มในรายการ
+  const newAdmin = {
+    id: adminList.length + 1, // สร้าง ID ใหม่โดยเพิ่มจากจำนวน admin ในรายการปัจจุบัน
+    name: `${formData.firstName} ${formData.lastName}`, // รวมชื่อและนามสกุลเป็นหนึ่งฟิลด์
+  };
+
+  // เพิ่ม: อัปเดต state adminList โดยเพิ่ม admin ใหม่
+  setAdminList([...adminList, newAdmin]); // ใช้ spread operator เพื่อรวม admin ใหม่เข้ากับรายการเดิม
+
+  // เพิ่ม: แสดงข้อความแจ้งเตือนว่าการบันทึกสำเร็จ
+  Swal.fire({
+    title: "บันทึกข้อมูลสำเร็จ!",
+    text: "ข้อมูลถูกบันทึก",
+    icon: "success",
+  });
+
+  // เพิ่ม: รีเซ็ตข้อมูลในฟอร์มให้ว่างหลังจากบันทึกสำเร็จ
+  setFormData({
+    firstName: "", // ล้างฟิลด์ชื่อ
+    lastName: "", // ล้างฟิลด์นามสกุล
+    phone: "", // ล้างฟิลด์เบอร์โทร
+    email: "", // ล้างฟิลด์อีเมล
+    password: "", // ล้างฟิลด์รหัสผ่าน
+    confirmPassword: "", // ล้างฟิลด์ยืนยันรหัสผ่าน
+  });
+
+  // สำหรับการดีบัก ดูข้อมูลที่บันทึกใน console
+  console.log("Form submitted:", formData);
   };
 
   // Function to handle edit button click
@@ -43,6 +83,17 @@ const AdminManagement = () => {
   const handleDelete = (id) => {
     console.log("Delete admin with ID:", id);
   };
+
+  //เพื่ออัปเดตรายชื่อ adminList
+  const updateAdmin = (updatedAdmin) => {
+    setAdminList((prevList) =>
+      prevList.map((admin) =>
+        admin.id === updatedAdmin.id ? updatedAdmin : admin
+      )
+    );
+  };
+  
+  
 
   return (
     <div className="admin-management-container">
