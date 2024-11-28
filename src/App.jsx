@@ -13,6 +13,7 @@ import Login from "./components/Login/Login";
 import Forgot from "./components/Login/Forgotpassword/Forgot";
 import CheckDriver from "./components/Review2/CheckDriver";
 import Checkorder from "./components/Checkorder/Checkorder";
+import OrderDetails from "./components/Checkorder/OrderDetails";
 import Layout from "./Layout/layout/Layout";
 
 import Provider from "./components/ProviderManagement/Provider";
@@ -152,6 +153,7 @@ function App() {
           <Route path="/adminaccmanagement" element={<AdminAccout />} />
 
           <Route path="/checkorder" element={<Checkorder />} />
+          <Route path="/orderdetails/:orderNumber" element={<OrderDetails />} />
 
           <Route path="/bannermanagement" element={<BannerManagement />} />
 
