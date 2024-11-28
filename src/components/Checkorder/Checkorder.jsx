@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 import "./Checkorder.css";
 import OrderData from "../../app-data/OrderData";
 
@@ -8,10 +9,15 @@ function Checkorder() {
   const [filterStatus, setFilterStatus] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const itemsPerPage = 10;
+  const navigate = useNavigate();  // ใช้ useNavigate
 
   const filteredData = OrderData.filter((item) => {
-    const matchesStatus = filterStatus === "All" ? true : item.status === filterStatus.toLowerCase();
-    const matchesSearch = searchTerm === "" ? true : item.order_number.toString() === searchTerm;
+    const matchesStatus =
+      filterStatus === "All"
+        ? true
+        : item.status === filterStatus.toLowerCase();
+    const matchesSearch =
+      searchTerm === "" ? true : item.order_number.toString() === searchTerm;
 
     return matchesStatus && matchesSearch;
   });
@@ -34,18 +40,22 @@ function Checkorder() {
     }
   };
 
+  const handleNavigateToDetails = (orderNumber) => {
+    navigate(`/orderdetails/${orderNumber}`);  // นำทางไปที่หน้า OrderDetails และส่ง orderNumber ผ่าน URL
+  };
+
   return (
     <div className="checkorder-container">
       <h1 className="fs-3 font-bold mb-3">Order Management</h1>
       <div className="d-flex justify-content-between align-items-center my-3">
         <div>
-          <span className="text-success me-3 font-bold">
+          <span className="statusOrder text-success me-3 font-bold">
             <i className="bi bi-check-circle-fill ml-1"></i> Successful
           </span>
-          <span className="text-warning me-3 font-bold">
+          <span className="statusOrder text-warning me-3 font-bold">
             <i className="bi bi-hourglass-split"></i> In progress
           </span>
-          <span className="text-danger font-bold">
+          <span className="statusOrder text-danger font-bold">
             <i className="bi bi-x-circle-fill"></i> Unsuccessful
           </span>
         </div>
@@ -58,7 +68,7 @@ function Checkorder() {
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
-                setCurrentPage(1); 
+                setCurrentPage(1);
               }}
               aria-label="Search Order Number"
               aria-describedby="search-addon"
@@ -73,7 +83,7 @@ function Checkorder() {
             value={filterStatus}
             onChange={(e) => {
               setFilterStatus(e.target.value);
-              setCurrentPage(1); 
+              setCurrentPage(1);
             }}
           >
             <option value="All">All Status</option>
@@ -83,8 +93,8 @@ function Checkorder() {
           </select>
         </div>
       </div>
-      <table className="table table-hover table-bordered shadow-sm rounded table-striped">
-        <thead className="table-dark">
+      <table className="table table-striped">
+        <thead>
           <tr>
             <th>เดือน/วัน/ปี</th>
             <th className="text-start">Order Id</th>
@@ -102,21 +112,41 @@ function Checkorder() {
               <td className="align-middle">{item.provider}</td>
               <td className="align-middle text-center">
                 {item.status === "success" ? (
-                  <span className="statusOrder bg-success text-white px-3 py-1 text-sm font-bold rounded-2xl">
+                  <span className="statusOrder me-3 bg-success text-white px-3 py-1 text-sm font-bold rounded-2xl">
                     Successful
                     <i className="bi bi-check-circle-fill ml-1 text-green-500"></i>
                   </span>
                 ) : item.status === "waiting" ? (
-                  <span className="statusOrder bg-warning text-white px-3  py-1 text-sm font-bold rounded-2xl">
+                  <span className="statusOrder me-3 bg-warning text-white px-3 py-1 text-sm font-bold rounded-2xl">
                     Waiting
                     <i className="bi bi-hourglass-split ml-1 text-yellow-100"></i>
                   </span>
                 ) : item.status === "failed" ? (
-                  <span className="statusOrder bg-danger text-white px-3 py-1 text-sm font-bold rounded-2xl">
+                  <span className="statusOrder me-3 bg-danger text-white px-3 py-1 text-sm font-bold rounded-2xl">
                     Unsuccessful{" "}
                     <i className="bi bi-x-circle-fill ml-1 text-red-200"></i>
                   </span>
                 ) : null}
+                <button
+                  className="btn btn-dark"
+                  style={{
+                    borderRadius: "50%",
+                    width: "20px",
+                    height: "20px",
+                    fontSize: "12px",
+                    lineHeight: "20px", // จัดให้ข้อความหรือไอคอนอยู่ตรงกลางแนวตั้ง
+                    padding: 0,
+                  }}
+                  onClick={() => handleNavigateToDetails(item.order_number)}  // เมื่อคลิกจะนำทางไปยังหน้ารายละเอียด
+                >
+                  <i
+                    className="bi bi-caret-right-fill"
+                    style={{
+                      color: "white",
+                      fontSize: "inherit",
+                    }}
+                  ></i>
+                </button>
               </td>
             </tr>
           ))}
