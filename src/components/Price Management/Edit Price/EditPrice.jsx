@@ -29,12 +29,15 @@ function EditPrice() {
         }
       });
     };
+    //PriceManagement
   
     // ฟังก์ชันยืนยันการบันทึก
     const handleConfirmSave = () => {
       setShowPopup(false);
       console.log('Form submitted:', formData); // หรือเรียก API
       alert('บันทึกข้อมูลสำเร็จ!'); // สามารถเปลี่ยนเป็น API Call ได้
+
+      navigate('/PriceManagement');
      
     };
   
@@ -43,7 +46,7 @@ function EditPrice() {
       setShowPopup(false);
     };
   
-    // Sample state for form inputs
+    // Sample state for form inPriceManagementputs
     const [formData, setFormData] = useState({
       serviceOrder: id,
       serviceName: 'rorem', // Replace with actual data fetch if necessary

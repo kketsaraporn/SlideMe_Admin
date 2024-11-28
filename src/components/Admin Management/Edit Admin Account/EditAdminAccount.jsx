@@ -35,14 +35,34 @@ const EditAdminAccount = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    Swal.fire({
+      title: "ยืนยันที่จะบันทึกข้อมูล?",
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "บันทึก",
+      cancelButtonText: "ยกเลิก"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "เสร็จสิ้น!",
+          text: "",
+          icon: "success"
+        }).then(()=>navigate('/adminmanagement'))
+      }
+    });
+
     console.log("Updated Admin Data:", formData);
     // ตัวอย่าง: อัปเดตข้อมูลใน `adminList` (สามารถเชื่อม API ได้ในขั้นตอนนี้)
-    setAdminList((prevList) =>
+    /* setAdminList((prevList) =>
       prevList.map((admin) =>
         admin.id === parseInt(id) ? { ...admin, ...formData } : admin
       )
     );
-    navigate("/adminmanagement"); // นำทางกลับไปที่หน้า Admin Management
+    navigate("/adminmanagement"); */ // นำทางกลับไปที่หน้า Admin Management
   };
 
   return (
