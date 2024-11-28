@@ -49,13 +49,13 @@ function Checkorder() {
       <h1 className="fs-3 font-bold mb-3">Order Management</h1>
       <div className="d-flex justify-content-between align-items-center my-3">
         <div>
-          <span className="statusOrder text-success me-3 font-bold">
+          <span className="text-success me-3 font-bold">
             <i className="bi bi-check-circle-fill ml-1"></i> Successful
           </span>
-          <span className="statusOrder text-warning me-3 font-bold">
+          <span className="text-warning me-3 font-bold">
             <i className="bi bi-hourglass-split"></i> In progress
           </span>
-          <span className="statusOrder text-danger font-bold">
+          <span className="text-danger font-bold">
             <i className="bi bi-x-circle-fill"></i> Unsuccessful
           </span>
         </div>
@@ -94,13 +94,14 @@ function Checkorder() {
         </div>
       </div>
       <table className="table table-striped">
-        <thead>
+        <thead className="table-dark">
           <tr>
             <th>เดือน/วัน/ปี</th>
             <th className="text-start">Order Id</th>
             <th className="text-start">Username</th>
             <th className="text-start">Provider</th>
             <th>Status</th>
+            <th>ตรวจสอบ</th>
           </tr>
         </thead>
         <tbody>
@@ -112,22 +113,25 @@ function Checkorder() {
               <td className="align-middle">{item.provider}</td>
               <td className="align-middle text-center">
                 {item.status === "success" ? (
-                  <span className="statusOrder me-3 bg-success text-white px-3 py-1 text-sm font-bold rounded-2xl">
+                  <span className="statusOrder bg-success text-white px-3 py-1 text-sm font-bold rounded-2xl">
                     Successful
                     <i className="bi bi-check-circle-fill ml-1 text-green-500"></i>
                   </span>
                 ) : item.status === "waiting" ? (
-                  <span className="statusOrder me-3 bg-warning text-white px-3 py-1 text-sm font-bold rounded-2xl">
+                  <span className="statusOrder bg-warning text-white px-3 py-1 text-sm font-bold rounded-2xl">
                     Waiting
                     <i className="bi bi-hourglass-split ml-1 text-yellow-100"></i>
                   </span>
                 ) : item.status === "failed" ? (
-                  <span className="statusOrder me-3 bg-danger text-white px-3 py-1 text-sm font-bold rounded-2xl">
+                  <span className="statusOrder bg-danger text-white px-3 py-1 text-sm font-bold rounded-2xl">
                     Unsuccessful{" "}
                     <i className="bi bi-x-circle-fill ml-1 text-red-200"></i>
                   </span>
                 ) : null}
-                <button
+               
+              </td>
+              <td className="align-middle text-center">
+              <button
                   className="btn btn-dark"
                   style={{
                     borderRadius: "50%",

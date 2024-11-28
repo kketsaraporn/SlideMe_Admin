@@ -33,7 +33,7 @@ function Review() {
       <table className="table table-hover table-bordered shadow-sm rounded table-striped">
         <thead className="table-dark">
           <tr>
-            <th>ไอดี</th>
+            <th>ลำดับ</th>
             <th className="text-start">ชื่อ - นามสกุล</th>
             <th>รีวิวจากลูกค้า</th>
             <th>คะแนนรีวิว</th>

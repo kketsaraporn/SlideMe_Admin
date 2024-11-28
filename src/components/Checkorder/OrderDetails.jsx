@@ -4,7 +4,7 @@ import OrderData from "../../app-data/OrderData";
 /* import mapPic from "../../imgs/map.png"; */
 import "./OrderDetails.css";
 
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+// import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 function OrderDetails() {
   const { orderNumber } = useParams(); // ดึง orderNumber จาก URL

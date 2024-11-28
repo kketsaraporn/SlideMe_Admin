@@ -1,6 +1,8 @@
 .checkorder-container {
   padding: 20px;
   border-radius: 8px;
+  background-color: #f8f9fa;
+  border: 2px solid #198833;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -14,12 +16,18 @@
   font-size: 15px;
 }
 
+.checkorder-container .table th {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+}
+
 .checkorder-container .statusOrder {
   display: inline-flex; /* ใช้ flex เพื่อจัดการเนื้อหา */
   align-items: center; /* จัดให้อยู่ตรงกลางแนวแกน Y */
   justify-content: center; /* จัดให้อยู่กลางแนวแกน X */
   width: 125px; /* กำหนดความกว้างให้เท่ากัน */
-  height: 25px; /* กำหนดความสูงให้เท่ากัน */
+  height: 35px; /* กำหนดความสูงให้เท่ากัน */
   text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
   white-space: nowrap; /* ป้องกันข้อความซ้อนบรรทัด */
   box-sizing: border-box; /* คำนวณ padding และ border ในขนาด */
@@ -39,11 +47,6 @@
 .checkorder-container .table th,
 .table td {
   vertical-align: middle;
-}
-
-.checkorder-container .table th {
-  color: black;
-  text-align: center;
 }
 
 .checkorder-container .table td {

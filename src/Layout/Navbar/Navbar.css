@@ -4,7 +4,6 @@
     width: 250px;
     background-color: #0D7342;
     color: white;
-    min-height: 115vh;
     display: flex;
     flex-direction: column;
     padding: 20px;
