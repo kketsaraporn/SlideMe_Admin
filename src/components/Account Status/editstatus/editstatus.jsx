@@ -27,7 +27,7 @@ function EditStatus({ statuses, onSave }) {
     };
 
     onSave(editedStatus);
-    navigate('/adminmanagement'); // กลับไปหน้าหลักหลังจากบันทึก
+    navigate('/status'); // กลับไปหน้าหลักหลังจากบันทึก
   };
 
   return (

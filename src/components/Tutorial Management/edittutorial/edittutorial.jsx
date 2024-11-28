@@ -37,7 +37,7 @@ function EditTutorial({ tutoriales, onSave }) {
     };
 
     onSave(editedTutorial);
-    navigate('/'); // กลับไปหน้าหลักหลังจากบันทึก
+    navigate('/tutorial-edit'); // กลับไปหน้าหลักหลังจากบันทึก
   };
 
   // ฟังก์ชันสําหรับอัปโหลดรูปภาพ
