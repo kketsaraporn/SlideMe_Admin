@@ -3,7 +3,7 @@ import Select from "react-select";
 import "./Permission.css"
 
 const Permission = () => {
-  const roles = ["Admin", "User", "Provider"];
+  const roles = ["SuperAdmin", "Admin"];
 
   // ฟังก์ชันในรูปแบบ Label-Value
   const functions = [
@@ -24,9 +24,8 @@ const Permission = () => {
 
   // State สำหรับจัดการสิทธิ์ในแต่ละ Role
   const [permissions, setPermissions] = useState({
-    Admin: [],
-    User: [],
-    Provider: [],
+    SuperAdmin: [],
+    Admin: []
   });
 
   // อัปเดตค่าที่เลือก
