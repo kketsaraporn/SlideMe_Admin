@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import providerDummyData from "../../../data/providersDummyData";
 import "./providerDetail.css";
+import man1 from "../../../imgs/man.jpg";
+import tcar from "../../../imgs/towcar.jpg";
 
 function ProviderDetail() {
   const navigate = useNavigate();
@@ -12,7 +14,7 @@ function ProviderDetail() {
     <div className="provider-detail-container">
       <div className="provider-detail-content">
         <div className="provider-detail-profile">
-          <img src="../../../../public/img/man.jpg" alt="Profile" />
+          <img src={man1} alt="Profile" />
           <h2>
             {provider?.name} {provider?.surname}
           </h2>
@@ -43,7 +45,7 @@ function ProviderDetail() {
           <div className="provider-detail-info-car">
             <div>
               <div>
-                <img src="../../../../public/img/towcar.jpg" alt="" />
+                <img src={tcar} alt="" />
               </div>
             </div>
             <div className="provider-detail-info-car-container">

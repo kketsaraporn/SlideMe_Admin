@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import userDummyData from "../../../data/usersDummyData";
 import "./UserDetail.css";
+import mans from "../../../imgs/man.jpg"
 
 function UserDetail() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ function UserDetail() {
     <div className="user-detail-container">
       <div className="user-detail-content">
         <div className="user-detail-profile">
-          <img src="../../../../public/img/man.jpg" alt="Profile" />
+          <img src={mans} alt="Profile" />
           <h2>
             {user?.name} {user?.surname}
           </h2>
