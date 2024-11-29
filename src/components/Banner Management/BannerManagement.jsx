@@ -20,6 +20,7 @@ function BannerManagement() {
     setFormFields({ ...formFields, [name]: value });
   };
 
+
   // ฟังก์ชันจัดการยกเลิกและล้างค่าฟอร์ม
   const handleCancel = () => {
     setSelectedFile(null); // ล้างไฟล์ที่เลือก
@@ -29,6 +30,36 @@ function BannerManagement() {
     setFormFields({ title: "", subtitle: "", description: "" }); // รีเซ็ตฟอร์ม
     alert("ฟอร์มถูกล้างข้อมูลเรียบร้อย!");
   };
+
+/*   const handleUploadPhoto = async () => {
+    if (!selectedFile) {
+        alert("กรุณาเลือกไฟล์รูปภาพ!");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", selectedFile); // เพิ่มไฟล์ใน FormData
+
+    try {
+        const response = await fetch("http://localhost:3000/upload", {
+            method: "POST",
+            body: formData,
+        });
+
+        if (!response.ok) {
+            alert("เกิดข้อผิดพลาดในการอัปโหลด");
+            return; // **เพิ่มการตรวจสอบสถานะของ response ก่อนที่จะทำการ parse ข้อมูล**
+        }
+
+        const data = await response.json();
+        alert("อัปโหลดรูปภาพสำเร็จ!");
+        console.log("Uploaded file URL:", data.filePath); // URL ของรูปภาพที่อัปโหลด
+    } catch (error) {
+        console.error("Error:", error);
+        alert("ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์");
+    }
+}; */
+
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -41,8 +72,8 @@ function BannerManagement() {
         alert("ขนาดไฟล์ต้องไม่เกิน 10MB!");
         return;
       }
-      setSelectedFile(file);
-      setPreview(URL.createObjectURL(file));
+      setSelectedFile(file);// เก็บไฟล์ลงใน state
+      setPreview(URL.createObjectURL(file));// แสดงภาพตัวอย่าง
     }
   };
 
@@ -51,7 +82,7 @@ function BannerManagement() {
   };
 
   const toggleStatus = () => {
-    setIsActive(!isActive);
+    setIsActive(!isActive);// เปลี่ยนสถานะจากเปิด/ปิด
   };
 
   return (
@@ -135,7 +166,7 @@ function BannerManagement() {
           <input
             type="date"
             value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
+            onChange={(e) => setSelectedDate(e.target.value)}// ใช้ state เพื่อเก็บวันที่ที่เลือก
           />
         </div>
         <div className="form-group">
