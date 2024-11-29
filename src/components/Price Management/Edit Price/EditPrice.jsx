@@ -25,7 +25,7 @@ function EditPrice() {
             title: "เสร็จสิ้น!",
             text: "",
             icon: "success"
-          }).then(()=>navigate('/'))
+          }).then(()=>navigate('/PriceManagement'))
         }
       });
     };
