@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./BannerManagement.css";
 
 function BannerManagement() {
-  const [showPopup, setShowPopup] = useState(false);
+  /* const [showPopup, setShowPopup] = useState(false); */
   const [isActive, setIsActive] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState("");
-  const [isUploading, setIsUploading] = useState(false);
+  /* const [isUploading, setIsUploading] = useState(false); */
   const [selectedDate, setSelectedDate] = useState("");
   const [formFields, setFormFields] = useState({
     title: "",
