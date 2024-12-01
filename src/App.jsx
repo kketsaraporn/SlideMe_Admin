@@ -38,6 +38,7 @@ import VehicleManagement from "./components/VehicleManagement/vehiclemanage";
 import EditVehicle from "./components/VehicleManagement/editvehicle/editvehicle";
 import TutorialManagement from "./components/Tutorial Management/TutorialManagement";
 import EditTutorial from "./components/Tutorial Management/edittutorial/edittutorial";
+import AboutDeveloperManagement from "./components/About Developer Management/AboutDeveloperManagement";
 
 
 
@@ -170,6 +171,8 @@ function App() {
 
           <Route path="/aboutusmanagement" element={<AboutUsManagement />} />
           <Route path="/about-edit/:id" element={<EditAboutUsManagement />} />
+
+          <Route path="/aboutdevelopermanagement" element={<AboutDeveloperManagement />} />
         </Route>
 
         {/* Catch all route */}

@@ -166,10 +166,10 @@ function Sidebar({ slide, setToken, setRole, token }) {
             </button>
           </Link>
 
-          <Link to="/">
+          <Link to="/aboutdevelopermanagement">
             <button
               className={`my-1 menu-item font-semibold ${
-                currentTab.pathname === "" && "active"
+                currentTab.pathname === "/aboutdevelopermanagement" && "active"
               }`}
             >
               About Developer Management
