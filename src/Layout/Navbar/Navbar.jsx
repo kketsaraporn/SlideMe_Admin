@@ -165,7 +165,21 @@ function Sidebar({ slide, setToken, setRole, token }) {
               About Us Management
             </button>
           </Link>
+
+          <Link to="/">
+            <button
+              className={`my-1 menu-item font-semibold ${
+                currentTab.pathname === "" && "active"
+              }`}
+            >
+              About Developer Management
+            </button>
+          </Link>
+
         </ul>
+
+
+
         <div
           onClick={() => {
             Swal.fire({
