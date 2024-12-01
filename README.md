@@ -1,4 +1,4 @@
-View our Project's Web: [Slide Me Admin](https://kketsaraporn.github.io/SlideMeAdmin/)  # React + Vite
+View our Project's Web: [Slide Me Admin](https://kketsaraporn.github.io/SlideMe_Admin/)  # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
