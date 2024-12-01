@@ -172,7 +172,7 @@ function Sidebar({ slide, setToken, setRole, token }) {
                 currentTab.pathname === "/aboutdevelopermanagement" && "active"
               }`}
             >
-              About Developer Management
+              About Developer
             </button>
           </Link>
 

@@ -23,8 +23,16 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* ปรับขนาดขั้นต่ำ */
     gap: 20px;
     justify-items: center;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;  
+      
 }
+
+.img-container :hover .developer-img {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
 
 /* Media Query สำหรับหน้าจอเล็ก */
 @media (max-width: 768px) {
@@ -44,3 +52,4 @@
         gap: 30px; /* เพิ่มช่องว่างระหว่างรูป */
     }
 }
+
